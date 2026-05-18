@@ -1,0 +1,131 @@
+{
+  "slug": "wikimedia-brief",
+  "number": 4,
+  "title": "Wikimedia Brief",
+  "subtitle": "What Wikimedia needs to understand about Unicode and SignWriting",
+  "summary": "A short practical note for Wikimedia staff and collaborators about why naming characters is not enough for current SignWriting project needs.",
+  "synopsis": "Wikimedia and other public-platform readers need to understand why current SignWriting work cannot rely on official Unicode SignWriting alone. The real gap is larger than font support: the facial system affects stable symbol identity, the Sutton SignWriting production stack still uses FSW and SWU, and public explanations should not flatten the problem into a solved-symbol-block story.",
+  "essay": "essay.md",
+  "primary_artifact": {
+    "file": "essay.md",
+    "artifact_type": "technical-briefing",
+    "public_label": "Briefing",
+    "public_slug": "primary",
+    "publication_designation": "Technical Briefing"
+  },
+  "companion_documents": [
+    {
+      "file": "meeting-notes.md",
+      "label": "Discussion Outline",
+      "slug": "meeting-notes",
+      "artifact_type": "meeting-notes",
+      "publication_designation": "Meeting Notes"
+    }
+  ],
+  "slides": [
+    {
+      "id": "wikimedia-baseline",
+      "title": "What Wikimedia Needs To Know First",
+      "kicker": "1",
+      "summary": "The Unicode issue is still practical for Wikimedia projects that want to support SignWriting well.",
+      "image_prompts": {
+        "concrete": "Wikimedia project slide showing storage, rendering, reuse, sharing, maintenance, and the practical Unicode gap for SignWriting",
+        "abstract": "Public-platform needs revealing a practical encoding compatibility issue"
+      },
+      "bullets": [
+        "Official Unicode SignWriting is not sufficient by itself",
+        "Current projects still depend on FSW and SWU",
+        "Naming characters is not enough for current project needs",
+        "The issue is encoding plus interoperability, not only fonts",
+        "That matters for storage, reuse, and maintenance"
+      ],
+      "speech": "Wikimedia's starting point should be simple. The Unicode issue around SignWriting is still practical and active. Official Unicode SignWriting is not sufficient by itself for current project needs. Current work still depends on FSW and SWU. Naming characters is not enough for the real storage, reuse, and maintenance needs of Wikimedia projects. The issue is not only fonts. It is also encoding, compatibility, and interoperability across real project workflows.",
+      "notes": "Open collaboratively. This is the shortest honest framing.",
+      "mermaid": "flowchart TD\n  A[Wikimedia project need] --> B[Storage]\n  A --> C[Rendering]\n  A --> D[Reuse and sharing]\n  A --> E[Maintenance]\n  B --> F[Current Unicode gap becomes practical]\n  C --> F\n  D --> F\n  E --> F\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  class A,B,C,D,E,F node;"
+    },
+    {
+      "id": "what-projects-see",
+      "title": "What Wikimedia Is Likely To Notice",
+      "kicker": "2",
+      "summary": "Wikimedia projects usually encounter the problem first as custom strings, scripts, and uncertainty about whether Unicode already solved it.",
+      "image_prompts": {
+        "concrete": "Wikimedia symptom slide showing ASCII-based SignWriting strings, custom rendering, user scripts, and Unicode support confusion",
+        "abstract": "Visible project symptoms pointing to a deeper technical baseline"
+      },
+      "bullets": [
+        "ASCII-based strings in real project work",
+        "Custom renderers or user scripts",
+        "Mixed assumptions about Unicode support",
+        "These are symptoms, not the whole architecture"
+      ],
+      "speech": "What Wikimedia is likely to notice first is not the whole architecture. It is the symptom layer. People see ASCII-based strings, custom rendering, and mixed assumptions about whether Unicode already solved the problem. That confusion is understandable. The public expectation formed around the block. The project reality still depends on other layers. These are symptoms of a deeper compatibility gap, not the whole diagnosis by themselves.",
+      "notes": "Make this recognizable to a Wikimedia audience.",
+      "mermaid": "flowchart LR\n  A[Project reality] --> B[ASCII strings]\n  A --> C[Custom rendering]\n  A --> D[Unicode confusion]\n  B --> E[Need for clearer technical baseline]\n  C --> E\n  D --> E\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  class A,B,C,D,E node;"
+    },
+    {
+      "id": "real-gap",
+      "title": "What The Real Gap Is",
+      "kicker": "3",
+      "summary": "The real gap is not only missing fonts. It includes stable symbol identity, written-sign encoding, and interoperability.",
+      "image_prompts": {
+        "concrete": "Public-platform technical gap slide showing rendering, written-sign compatibility, facial symbol identity, storage, comparison, and reuse",
+        "abstract": "Rendering issues connected to deeper data identity and interoperability"
+      },
+      "bullets": [
+        "The issue is larger than rendering",
+        "Naming characters is not the same as preserving stable symbols",
+        "The official model does not provide a compatible written-sign solution",
+        "The facial system shifts part of symbol formation into font behavior",
+        "Data storage, comparison, and reuse are involved"
+      ],
+      "speech": "The real gap is not only that some fonts are missing. The larger problem is that naming characters is not the same as preserving stable symbols, and the current official model also does not provide a compatible written-sign solution. In the facial system, part of symbol formation shifts into font behavior. That affects not only rendering, but also how data is stored, compared, and reused across systems. This is why the problem matters to Wikimedia as infrastructure rather than only as display.",
+      "notes": "This is the core explanatory slide.",
+      "mermaid": "flowchart TD\n  A[Official Unicode SignWriting] --> B[Rendering questions]\n  A --> C[Written-sign compatibility]\n  A --> D[Symbol identity in facial system]\n  C --> E[Storage and reuse impact]\n  D --> E\n  B --> E\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#fefce8,color:black,stroke:#ca8a04,stroke-width:2px;\n  class A,B,C,D node;\n  class E out;"
+    },
+    {
+      "id": "current-stack",
+      "title": "What The Current Stack Uses",
+      "kicker": "4",
+      "summary": "Current Sutton SignWriting workflows rely on FSW and SWU because that stack already carries the real ecosystem.",
+      "image_prompts": {
+        "concrete": "Wikimedia implementation slide showing current SignWriting workflows using FSW as production encoding and SWU as Unicode-oriented interchange",
+        "abstract": "Current project workflows grounded in FSW and SWU"
+      },
+      "bullets": [
+        "FSW is the main production encoding",
+        "SWU is the supported Unicode-oriented isomorphic form",
+        "Current tools and datasets are built around them",
+        "Treat that production reality as the baseline"
+      ],
+      "speech": "If Wikimedia wants to describe or handle SignWriting accurately, it helps to start from the real production stack rather than from the assumption that the official block already solved the problem. Current Sutton SignWriting workflows rely on FSW and SWU. That is not an awkward exception. It is the present baseline for tools, datasets, and interoperability.",
+      "notes": "Use this to keep the conversation grounded.",
+      "mermaid": "flowchart LR\n  A[Current ecosystem] --> B[FSW]\n  A --> C[SWU]\n  B --> D[Canonical production workflows]\n  C --> E[Unicode-oriented interchange]\n  D --> F[What projects use now]\n  E --> F\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  class A,B,C,D,E node;\n  class F out;"
+    },
+    {
+      "id": "realistic-public-posture",
+      "title": "What A Realistic Public Posture Looks Like",
+      "kicker": "5",
+      "summary": "Public discussion is most useful when it starts from the actual production stack and avoids claiming the problem is already solved.",
+      "image_prompts": {
+        "concrete": "Public communication slide showing shared technical baseline, practical current support, accurate explanation, and possible future Unicode work",
+        "abstract": "A realistic public posture built on accurate technical grounding"
+      },
+      "bullets": [
+        "Establish a shared technical baseline",
+        "Avoid flattening the issue into a solved-symbol-block story",
+        "Recognize FSW and SWU as the practical baseline",
+        "Revisit Unicode only from an accurate technical foundation"
+      ],
+      "speech": "A realistic public posture begins by acknowledging the current production stack rather than assuming the Unicode block already solved the problem. FSW and SWU remain the practical baseline. Accurate understanding matters more than premature standards conclusions, and any future Unicode discussion is only worth the effort if it begins from that reality.",
+      "notes": "End with clarity and restraint, not with an ask for support.",
+      "mermaid": "flowchart TD\n  A[Shared technical baseline] --> B[Accurate explanation]\n  A --> C[Practical current support]\n  B --> D[Possible future Unicode work]\n  C --> D\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  class A,B,C,D node;\n  class D out;"
+    }
+  ],
+  "publication": {
+    "status": "working-briefing",
+    "doi_candidate": false,
+    "repo_candidate": true,
+    "zenodo_record": "not-planned",
+    "citation_role": "reference-briefing"
+  }
+}

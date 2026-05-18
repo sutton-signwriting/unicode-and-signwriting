@@ -1,0 +1,150 @@
+{
+  "slug": "developer-notes",
+  "number": 2,
+  "title": "Developer Notes",
+  "subtitle": "Production encoding guidance and compatibility cautions",
+  "summary": "Implementation guidance for developers working with Sutton SignWriting data, conversion, symbol identity, and Unicode-facing workflows.",
+  "synopsis": "Developers need clear boundaries around what to store, what to treat as canonical, why naming characters is not the same as preserving stable symbols or written signs, where official Unicode SignWriting falls short, and how FSW and SWU should be used in current tooling, interchange, and data workflows.",
+  "essay": "essay.md",
+  "primary_artifact": {
+    "file": "essay.md",
+    "artifact_type": "technical-briefing",
+    "public_label": "Technical Note",
+    "public_slug": "primary",
+    "publication_designation": "Technical Note"
+  },
+  "companion_documents": [
+    {
+      "file": "package-and-tooling.md",
+      "label": "Package and Tooling Notes",
+      "slug": "package-and-tooling",
+      "artifact_type": "technical-notes",
+      "publication_designation": "Technical Notes"
+    }
+  ],
+  "slides": [
+    {
+      "id": "developer-baseline",
+      "title": "Current Implementation Baseline",
+      "kicker": "1",
+      "summary": "Use FSW as canonical production text and SWU as the supported Unicode-oriented isomorphic form.",
+      "image_prompts": {
+        "concrete": "Developer architecture slide showing FSW as canonical production text, SWU as Unicode-oriented form, ISWA 2010 as symbol reference, and official Unicode as compatibility context",
+        "abstract": "Encoding layers arranged as a practical developer baseline"
+      },
+      "bullets": [
+        "FSW for canonical storage and processing",
+        "SWU for Unicode-oriented interchange and inspection",
+        "ISWA 2010 as the symbol reference layer",
+        "Official Unicode SignWriting is not a drop-in replacement"
+      ],
+      "speech": "The implementation baseline is simple. Use FSW as canonical production text. Use SWU when a Unicode-oriented isomorphic form is useful for display, interchange, or downstream workflows. Use ISWA 2010 as the symbol reference layer. This keeps canonical text, stable symbol identity, and Unicode-oriented interchange in the right relationship. Do not assume the official Unicode SignWriting model can replace the current stack without redesign.",
+      "notes": "This is the main recommendation slide. Keep it crisp.",
+      "mermaid": "flowchart TD\n  A[Formal SignWriting model] --> B[FSW canonical production text]\n  A --> C[SWU Unicode-oriented form]\n  A --> D[ISWA 2010 symbol reference]\n  B --> E[Storage, parsing, search]\n  C --> F[Inspection and interchange]\n  D --> G[Shared symbol identity]\n\n  classDef core fill:#f5f3ff,color:black,stroke:#7c3aed,stroke-width:3px;\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  class A,B,C,D core;\n  class E,F,G out;"
+    },
+    {
+      "id": "canonical-boundaries",
+      "title": "Keep the Encoding Boundaries Visible",
+      "kicker": "2",
+      "summary": "A healthy codebase makes canonical, interchange, compatibility, and experimental layers explicit.",
+      "image_prompts": {
+        "concrete": "Software architecture slide separating canonical storage, interchange forms, compatibility support, and experimental encoding paths",
+        "abstract": "Clear encoding boundaries inside a maintainable codebase"
+      },
+      "bullets": [
+        "Canonical text should be explicit",
+        "Interchange forms should be named clearly",
+        "Compatibility support should not masquerade as canonical storage",
+        "Experimental paths should stay isolated"
+      ],
+      "speech": "A recurring software mistake is to let multiple encodings coexist without clear boundaries. That makes downstream features harder to maintain. A healthier architecture names the layers directly: what is canonical, what is interchange, what is compatibility support, and what is experimental. When those boundaries stay visible, conversion, validation, search, and migration decisions become more honest and more testable.",
+      "notes": "This is an architecture hygiene slide.",
+      "mermaid": "flowchart TD\n  A[Codebase] --> B[Canonical]\n  A --> C[Interchange]\n  A --> D[Compatibility]\n  A --> E[Experimental]\n  B --> F[Stable core decisions]\n  C --> G[Explicit conversion]\n  D --> H[Constrained support]\n  E --> I[Isolation and testing]\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  class A,B,C,D,E,F,G,H,I node;"
+    },
+    {
+      "id": "not-rendering-only",
+      "title": "Why Character Naming And Fonts Are Not Enough",
+      "kicker": "3",
+      "summary": "Developers need more than named characters and fonts. They need stable symbol identity, predictable storage, search, sorting, and interoperability.",
+      "image_prompts": {
+        "concrete": "Developer diagnostic slide showing character naming and fonts on one side, and stable symbol identity, storage, search, sorting, and interoperability on the other",
+        "abstract": "Visible rendering separated from deeper data identity requirements"
+      },
+      "bullets": [
+        "Rendering matters but is not the main issue",
+        "Naming characters is not the same as preserving stable symbols",
+        "The deeper issue is interoperability",
+        "Facial composition shows that fonts can mediate symbol identity",
+        "Storage and search need stable models"
+      ],
+      "speech": "It is tempting to frame the Unicode problem as a rendering problem because rendering is the most visible failure point. But developers need more than visible output, and they need more than named characters. They need stable symbol identity, predictable storage, reliable interchange, searchability, and sorting. The facial model makes the risk obvious: if the font partly determines the final symbol result, the model is no longer only about drawing. It is about data identity and interoperability.",
+      "notes": "Use this to stop the conversation from collapsing into font talk.",
+      "mermaid": "flowchart LR\n  A[Encoding choice] --> B[Storage]\n  A --> C[Search and sorting]\n  A --> D[Rendering]\n  A --> E[Interoperability]\n  D --> F[Visible output]\n  B --> G[Stable data]\n  C --> G\n  E --> G\n\n  classDef core fill:#f5f3ff,color:black,stroke:#7c3aed,stroke-width:3px;\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  class A,G core;\n  class B,C,D,E,F node;"
+    },
+    {
+      "id": "migration-test",
+      "title": "The Safe Migration Test",
+      "kicker": "4",
+      "summary": "Do not migrate existing data unless the compatibility questions are clearly answered first.",
+      "image_prompts": {
+        "concrete": "Migration decision slide with checkpoints for lossless written signs, stable symbols, sorting, renderer compatibility, and round-trip guarantees",
+        "abstract": "A cautious migration gate based on compatibility tests"
+      },
+      "bullets": [
+        "Are stable writer-selected symbols preserved across the full system?",
+        "Can full signs be represented without loss?",
+        "Can sorting be preserved?",
+        "Can fonts and renderers still work?",
+        "Can round-tripping be guaranteed?"
+      ],
+      "speech": "If someone asks whether to migrate existing Sutton SignWriting data to the official Unicode model, the safe answer is not yet. Migration should be justified, not assumed. The burden of proof is on the migration path. Are stable writer-selected symbols preserved across the full system? Can full signs be represented without loss? Can sorting stay stable? Can current renderers and tools still work? Can round-tripping be guaranteed? If the answers are not clearly yes, migration is not yet justified.",
+      "notes": "This slide is practical and cautionary.",
+      "mermaid": "flowchart TD\n  A[Proposed migration] --> B{Lossless full-sign representation?}\n  B -->|No| C[Do not migrate]\n  B -->|Yes| D{Sorting preserved?}\n  D -->|No| C\n  D -->|Yes| E{Round-trip stable?}\n  E -->|No| C\n  E -->|Yes| F[Migration may be justified]\n\n  classDef risk fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  classDef ok fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  class A,B,D,E node;\n  class C risk;\n  class F ok;"
+    },
+    {
+      "id": "ai-and-data",
+      "title": "Current AI and Data Reality",
+      "kicker": "5",
+      "summary": "The computational question is now more about dataset quality and scale than about whether usable encodings exist.",
+      "image_prompts": {
+        "concrete": "AI data workflow slide showing FSW corpora, SWU inspection data, processing workflows, model input, and data scale and quality constraints",
+        "abstract": "Usable encodings flowing into computational workflows with data quality as the constraint"
+      },
+      "bullets": [
+        "FSW remains strong canonical text",
+        "SWU is usable for AI-oriented workflows",
+        "The main constraint is data scale and quality",
+        "Unicode incompleteness is real, but not computational impossibility"
+      ],
+      "speech": "A useful correction for developers is that Unicode incompleteness is not the same thing as computational impossibility. The current stack is still usable. FSW remains a strong canonical form, and SWU is workable for AI-oriented preparation and model input because it preserves the Formal SignWriting two-part word structure in a Unicode-oriented form. The limiting factor now is often dataset size and dataset quality rather than the absence of any usable encoding at all.",
+      "notes": "This keeps the developer notes contemporary without losing the standards critique.",
+      "mermaid": "flowchart TD\n  A[Current text encodings] --> B[FSW canonical corpora]\n  A --> C[SWU Unicode-oriented data]\n  B --> D[Processing and search]\n  C --> E[Inspection and AI workflows]\n  D --> F[Real computational use]\n  E --> F\n  F --> G[Main constraint: data scale and quality]\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  class A,B,C,D,E node;\n  class F,G out;"
+    },
+    {
+      "id": "unicode8-package",
+      "title": "What `@sutton-signwriting/unicode8` Is For",
+      "kicker": "6",
+      "summary": "Bridge packages are useful, but they should be described as compatibility tooling rather than proof that the deeper problem is solved.",
+      "image_prompts": {
+        "concrete": "JavaScript package slide showing unicode8 bridge tooling connecting official Unicode SignWriting, FSW, SWU, and compatibility workflows",
+        "abstract": "A bridge tool connecting encodings without claiming to solve the full standards model"
+      },
+      "bullets": [
+        "The package processes official Unicode SignWriting where needed",
+        "It also bridges FSW and SWU",
+        "That makes it useful in real software",
+        "Its existence does not settle the architectural question"
+      ],
+      "speech": "The `@sutton-signwriting/unicode8` package is useful and should be described honestly. It helps process official Unicode SignWriting characters where they exist, and it bridges them with FSW and SWU in JavaScript tooling. That makes it valuable. But it should be framed as compatibility tooling and bridge tooling, not as evidence that naming characters, preserving stable symbols, and encoding complete written signs have all been solved by one model.",
+      "notes": "End by acknowledging practical tooling without surrendering the larger position.",
+      "mermaid": "flowchart TD\n  A[unicode8 package] --> B[Official Unicode 8 processing]\n  A --> C[Bridge to FSW]\n  A --> D[Bridge to SWU]\n  B --> E[Useful compatibility support]\n  C --> E\n  D --> E\n  E --> F[Not a proof that the standards problem is solved]\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#fefce8,color:black,stroke:#ca8a04,stroke-width:2px;\n  class A,B,C,D,E,F node;\n  class F out;"
+    }
+  ],
+  "publication": {
+    "status": "working-briefing",
+    "doi_candidate": false,
+    "repo_candidate": true,
+    "zenodo_record": "not-planned",
+    "citation_role": "reference-briefing"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "slug": "overview",
+  "number": 0,
+  "title": "Unicode and SignWriting Overview",
+  "subtitle": "Unicode history, compatibility, and standards-facing discussion",
+  "summary": "Unicode history, current production encodings, compatibility limits, developer guidance, Wikimedia context, and standards-facing next steps belong in one technical record.",
+  "essay": "essay.md",
+  "primary_artifact": {
+    "file": "essay.md",
+    "artifact_type": "series-overview",
+    "public_label": "Overview",
+    "public_slug": "primary",
+    "publication_designation": "Series Overview"
+  },
+  "slides": [
+    {
+      "id": "unicode-record-and-compatibility",
+      "title": "Unicode Record And Compatibility",
+      "kicker": "1",
+      "summary": "Unicode history, compatibility issues, current production encodings, and standards-facing SignWriting work need to be read together.",
+      "image_prompts": {
+        "concrete": "Technical standards overview slide showing Unicode, FSW, SWU, compatibility, developer notes, and UTC-facing documents",
+        "abstract": "Standards records and encoding layers aligned around SignWriting"
+      },
+      "bullets": [
+        "Unicode history and record",
+        "Compatibility between Unicode, FSW, and SWU",
+        "Developer guidance",
+        "UTC-facing technical notes"
+      ],
+      "speech": "Unicode history and current production practice need to be read together. The record includes Unicode proposals and approvals, but the compatibility question depends on whether official Unicode SignWriting can carry the actual Sutton SignWriting production ecosystem.",
+      "notes": "Keep it documentary and technical."
+    },
+    {
+      "id": "central-distinction",
+      "title": "Central Distinction",
+      "kicker": "2",
+      "summary": "Official Unicode encoding and the production text models that currently make SignWriting usable are related but not identical.",
+      "image_prompts": {
+        "concrete": "Comparison slide showing official Unicode SignWriting on one side and FSW/SWU production encodings on the other, with compatibility questions between them",
+        "abstract": "Two encoding paths connected by compatibility bridges"
+      },
+      "bullets": [
+        "Unicode approval is part of the record",
+        "Production use still depends on FSW and SWU",
+        "Compatibility questions remain technical",
+        "Standards claims should be precise"
+      ],
+      "speech": "The central distinction is that official Unicode history and current production encodings are related but not identical. Unicode approval, FSW, SWU, compatibility, rendering, and standards work each need to be kept in their proper places.",
+      "notes": "Keep the distinction precise and non-defensive."
+    },
+    {
+      "id": "reading-path",
+      "title": "Reading Path",
+      "kicker": "3",
+      "summary": "Readers can move from the overview into chronology, Unicode overview, the draft UTC-facing technical note, developer notes, and Wikimedia context.",
+      "image_prompts": {
+        "concrete": "Unicode series reading path slide moving from overview to chronology, Unicode overview, draft UTC-facing technical note, developer notes, and Wikimedia brief",
+        "abstract": "A standards reading path through chronology, compatibility, and implementation"
+      },
+      "bullets": [
+        "Chronology and Record",
+        "Unicode Overview",
+        "Draft UTC-Facing Technical Note",
+        "Developer Notes and Wikimedia Brief"
+      ],
+      "speech": "The clearest path starts with the overview and chronology. Then readers can move into the Unicode overview, draft UTC-facing technical note, developer notes, and Wikimedia brief depending on whether they need history, standards analysis, implementation guidance, or public-platform context.",
+      "notes": "Keep the reading path concise."
+    },
+    {
+      "id": "scope-boundary",
+      "title": "Scope Boundary",
+      "kicker": "4",
+      "summary": "The series critiques compatibility limits in the current official SignWriting model; it does not argue against Unicode or standards work.",
+      "image_prompts": {
+        "concrete": "Standards boundary slide separating Unicode as an important standards system from specific SignWriting compatibility gaps in symbol identity, written signs, sorting, and migration",
+        "abstract": "A precise technical critique held inside a standards-facing boundary"
+      },
+      "bullets": [
+        "Unicode remains an important standards context",
+        "The critique is compatibility-specific",
+        "Production evidence sets the baseline",
+        "Future work should start from accurate distinctions"
+      ],
+      "speech": "Unicode remains an important standards context. The critique here is compatibility-specific: the current official SignWriting model has limits around symbol identity, written signs, sorting, tooling, and migration. Future work should start from those distinctions.",
+      "notes": "Use this to keep the series technical rather than oppositional."
+    }
+  ],
+  "publication": {
+    "status": "web-first",
+    "doi_candidate": false,
+    "repo_candidate": false,
+    "zenodo_record": "not-planned",
+    "citation_role": "series-overview"
+  }
+}

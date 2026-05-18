@@ -1,0 +1,9 @@
+{
+  "slug": "unicode-and-signwriting",
+  "title": "Unicode and SignWriting",
+  "subtitle": "Compatibility, chronology, developer guidance, and standards-facing technical notes",
+  "description": "The standards and compatibility series for Unicode and SignWriting: Unicode chronology, official encoding status, production-compatibility judgments, developer guidance, Wikimedia context, and UTC-facing technical notes.",
+  "accepting_entries": true,
+  "kind": "briefing-series",
+  "home_doc": "README.md"
+}

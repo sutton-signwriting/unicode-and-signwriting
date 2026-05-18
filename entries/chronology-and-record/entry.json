@@ -1,0 +1,140 @@
+{
+  "slug": "chronology-and-record",
+  "number": 3,
+  "title": "Chronology and Record",
+  "subtitle": "Official submissions, minutes, and related documents",
+  "summary": "A dated record of the main Unicode and related SignWriting documents relevant to current compatibility and standards discussions.",
+  "synopsis": "The main Unicode proposals, support letters, collation responses, design notes, and related records from 2011 forward create the documentary path behind the current distinctions among character naming, stable symbol identity, and written-sign encoding.",
+  "essay": "essay.md",
+  "primary_artifact": {
+    "file": "essay.md",
+    "artifact_type": "technical-briefing",
+    "public_label": "Briefing",
+    "public_slug": "primary",
+    "publication_designation": "Technical Briefing"
+  },
+  "companion_documents": [
+    {
+      "file": "historical-notes.md",
+      "label": "Historical Notes",
+      "slug": "historical-notes",
+      "artifact_type": "historical-notes",
+      "publication_designation": "Historical Notes"
+    },
+    {
+      "file": "source-register.md",
+      "label": "Source Register",
+      "slug": "source-register",
+      "artifact_type": "source-register",
+      "publication_designation": "Source Register"
+    }
+  ],
+  "slides": [
+    {
+      "id": "record",
+      "title": "Why the Record Matters",
+      "kicker": "1",
+      "summary": "The current position comes from a real document trail showing what advanced and what did not.",
+      "image_prompts": {
+        "concrete": "Standards chronology slide showing Unicode proposals, minutes, responses, technical notes, and the current SignWriting compatibility position",
+        "abstract": "Document trail converging into a historically grounded technical position"
+      },
+      "bullets": [
+        "There were multiple proposals, responses, and minutes",
+        "The two-stage expectation matters",
+        "Character naming, symbol identity, and written-sign support did not advance equally",
+        "Collation and design concerns were documented",
+        "The documentary trail explains the present position"
+      ],
+      "speech": "The current Unicode position did not emerge from one late complaint or one private disagreement. It developed across multiple proposals, support letters, minutes, technical responses, and later design discussions. The documentary trail matters because it shows what was expected, what changed, what concerns were raised, and what advanced and what did not. It also shows that character naming, stable symbol identity, and written-sign support did not advance equally.",
+      "notes": "Set the deck up as factual and documentary.",
+      "mermaid": "flowchart TD\n  A[Proposals] --> E[Current position]\n  B[Minutes] --> E\n  C[Responses] --> E\n  D[Technical notes] --> E\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  class A,B,C,D,E node;"
+    },
+    {
+      "id": "two-stage-path",
+      "title": "2011 to 2012: The Two-Stage Path",
+      "kicker": "2",
+      "summary": "Early Unicode discussions proceeded under a two-stage expectation: first the symbol set, then a later solution for written signs.",
+      "image_prompts": {
+        "concrete": "Timeline slide from 2011 to 2012 showing Stage 1 symbol set advancing and Stage 2 written-sign encoding remaining unresolved",
+        "abstract": "A two-stage standards path with one branch completed and one branch left open"
+      },
+      "bullets": [
+        "Early proposals addressed symbol encoding",
+        "The expectation of a second stage for written signs was explicit",
+        "That expectation matters to later compatibility claims",
+        "It also helps explain later distinctions between characters, symbols, and written signs",
+        "The second stage never became a workable compatible standard"
+      ],
+      "speech": "The early record matters because it reflects a two-stage expectation. First, encode the symbol set. Second, later address the encoding that takes symbols and turns them into signs. That distinction was important at the time, and it remains important now. It also helps explain a later distinction between naming characters, preserving stable symbols, and encoding complete written signs. The first stage moved forward. The second never became a workable compatible standard. That is one reason later claims of closure are hard to accept as technically adequate.",
+      "notes": "This is the chronology hinge. Keep the two-stage idea explicit.",
+      "mermaid": "flowchart LR\n  A[Stage 1: Symbol set proposal] --> B[Advanced]\n  A --> C[Stage 2: Written-sign encoding]\n  C --> D[Expected later]\n  D --> E[No workable compatible standard]\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef risk fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  class A,B,C,D node;\n  class E risk;"
+    },
+    {
+      "id": "2015-turn",
+      "title": "2015: Block Approval Did Not End the Problem",
+      "kicker": "3",
+      "summary": "The official block was approved, but stable symbol identity and written-sign questions remained active rather than resolved.",
+      "image_prompts": {
+        "concrete": "Unicode 8 approval slide showing block approval beside continuing collation, symbol identity, and written-sign compatibility questions",
+        "abstract": "Formal approval separated from unresolved practical compatibility"
+      },
+      "bullets": [
+        "Unicode 8 added the SignWriting block",
+        "Character naming advanced",
+        "Collation concerns were immediately visible",
+        "The official approval did not settle symbol identity or written-sign compatibility",
+        "Block approval and problem resolution are not the same event"
+      ],
+      "speech": "A common misunderstanding is that once the block was approved in Unicode 8, the technical problem was finished. The record shows otherwise. Character naming advanced, but collation concerns were active in 2015, and design questions remained active. Stable symbol identity and written-sign compatibility were not thereby settled. Approval of a block and resolution of compatibility are not the same thing. The chronology matters precisely because those ideas are often collapsed into one.",
+      "notes": "This slide separates approval from adequacy.",
+      "mermaid": "flowchart TD\n  A[Unicode 8 block approval] --> B[Public expectation of closure]\n  A --> C[Collation questions remain]\n  A --> D[Compatibility questions remain]\n  C --> E[Problem not actually finished]\n  D --> E\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#fefce8,color:black,stroke:#ca8a04,stroke-width:2px;\n  class A,B,C,D,E node;\n  class E out;"
+    },
+    {
+      "id": "2016-2017",
+      "title": "2016 to 2017: Renewed Design Work, No Durable Follow-Through",
+      "kicker": "4",
+      "summary": "Later design presentations and options clarified the problem further, but they did not produce a completed compatible path.",
+      "image_prompts": {
+        "concrete": "Standards design-work timeline showing 2016 presentations and 2017 options leading to clarified issues but no durable compatible follow-through",
+        "abstract": "Renewed technical attention ending in an unresolved standards path"
+      },
+      "bullets": [
+        "Design notes and presentations continued",
+        "Auxiliary and alternative options were explored",
+        "The need for real technical support remained",
+        "The record ends in an unresolved position rather than a mature standard"
+      ],
+      "speech": "The later record is not empty. There were further design notes, presentations, and attempts to clarify options. But those efforts did not produce a durable compatible follow-through. The chronology does not tell a story of a closed problem. It tells a story of a problem that remained technically live while institutional energy faded.",
+      "notes": "Keep this sober and documentary, not dramatic.",
+      "mermaid": "flowchart LR\n  A[2016 presentations] --> C[Clarified design issues]\n  B[2017 design options] --> C\n  C --> D[No durable compatible follow-through]\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef risk fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  class A,B,C node;\n  class D risk;"
+    },
+    {
+      "id": "what-the-record-shows",
+      "title": "What the Record Shows",
+      "kicker": "5",
+      "summary": "The documentary trail supports a compatibility critique, not the story that Unicode fully solved the problem and only local reluctance remained.",
+      "image_prompts": {
+        "concrete": "Documentary conclusion slide showing character naming, symbol identity, written-sign encoding, collation concerns, and incomplete follow-through as separate historical findings",
+        "abstract": "Historical evidence clarifying the present compatibility critique"
+      },
+      "bullets": [
+        "Character naming, stable symbol identity, and written-sign encoding did not advance equally",
+        "The symbol stage and the written-sign stage were distinct",
+        "Collation and model questions were real",
+        "Later technical work did not complete the path",
+        "The present position is historically grounded"
+      ],
+      "speech": "The value of the record is not nostalgia. It is diagnostic clarity. The documentary trail supports the current compatibility critique. It shows a real two-stage expectation, real collation and model concerns, and later technical work that did not complete the path. It also shows that character naming, stable symbol identity, and written-sign encoding did not advance equally. That is why the present position should be read as historically grounded rather than as late-stage resistance.",
+      "notes": "Close with the interpretive value of the record.",
+      "mermaid": "flowchart TD\n  A[Two-stage expectation] --> D[Historically grounded present position]\n  B[Collation and model concerns] --> D\n  C[Incomplete later follow-through] --> D\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  class A,B,C,D node;"
+    }
+  ],
+  "publication": {
+    "status": "working-briefing",
+    "doi_candidate": false,
+    "repo_candidate": true,
+    "zenodo_record": "not-planned",
+    "citation_role": "reference-briefing"
+  }
+}

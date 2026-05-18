@@ -1,0 +1,177 @@
+{
+  "slug": "utc-technical-note",
+  "number": 5,
+  "title": "Draft UTC-Facing Technical Note",
+  "subtitle": "Technical note on compatibility, symbol identity, spatial composition, and next steps",
+  "summary": "Official Unicode SignWriting can name much of the character layer, but it does not preserve stable symbol identity or provide compatible written-sign support.",
+  "synopsis": "The current technical position separates character naming from stable symbol identity and written-sign encoding. The facial-diacritic model shifts part of symbol formation into font behavior, spatial composition and collation remain unresolved, and any renewed Unicode-level discussion should begin from compatibility review rather than automatic migration pressure.",
+  "essay": "essay.md",
+  "primary_artifact": {
+    "file": "essay.md",
+    "artifact_type": "technical-briefing",
+    "public_label": "Draft UTC-Facing Technical Note",
+    "public_slug": "primary",
+    "publication_designation": "Draft UTC-Facing Technical Note"
+  },
+  "companion_documents": [
+    {
+      "file": "compatibility-matrix.md",
+      "label": "Compatibility Matrix",
+      "slug": "compatibility-matrix",
+      "artifact_type": "compatibility-matrix",
+      "publication_designation": "Compatibility Matrix"
+    },
+    {
+      "file": "requested-work.md",
+      "label": "Requested Work",
+      "slug": "requested-work",
+      "artifact_type": "requested-work",
+      "publication_designation": "Requested Work"
+    }
+  ],
+  "slides": [
+    {
+      "id": "utc-position",
+      "title": "Current UTC-Facing Position",
+      "kicker": "1",
+      "summary": "The current official Unicode SignWriting encoding is not sufficient for compatible production use within the Sutton SignWriting ecosystem.",
+      "image_prompts": {
+        "concrete": "UTC technical note slide asking whether the current official Unicode SignWriting model can carry the real Sutton SignWriting ecosystem",
+        "abstract": "A formal standards review question focused on production compatibility"
+      },
+      "bullets": [
+        "Compatibility is the core issue",
+        "The gap is not only historical or rhetorical",
+        "It is technical and production-based",
+        "The current ecosystem is the standard of judgment"
+      ],
+      "speech": "The UTC-facing position should be stated plainly. The current official Unicode SignWriting encoding is not sufficient for compatible production use within the Sutton SignWriting ecosystem. The issue is technical and production-based. The relevant standard is not theoretical possibility. The relevant standard is whether the model can carry the real ecosystem without loss, redesign, or incompatible workarounds.",
+      "notes": "Start formal and measured.",
+      "mermaid": "flowchart TD\n  A[UTC review question] --> B[Can current official model carry the real ecosystem?]\n  B --> C[Current answer: not yet]\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  class A,B node;\n  class C out;"
+    },
+    {
+      "id": "three-different-questions",
+      "title": "Three Different Questions",
+      "kicker": "2",
+      "summary": "Naming characters, preserving stable writer-selected symbols, and encoding complete written signs are different questions.",
+      "image_prompts": {
+        "concrete": "UTC-facing three-part distinction slide separating character naming, stable writer-selected symbols, and complete written-sign encoding",
+        "abstract": "Three technical questions separated for standards review"
+      },
+      "bullets": [
+        "The official model can name much of the character layer",
+        "That is not the same as preserving stable writer-selected symbols",
+        "That is not the same as encoding complete written signs",
+        "The current official model reaches the first point much more than the second or third"
+      ],
+      "speech": "The core distinction should be stated directly. Naming characters is one question. Preserving stable writer-selected symbols is another. Encoding written signs is a third. The current official model can name much of the character set at the base, fill, and rotation layer. That does not mean it preserves stable symbol identity across the full system, and it does not mean it provides a compatible written-sign model. Once these three questions are separated, the present compatibility critique becomes clearer and more precise.",
+      "notes": "This replaces the older two-layer wording with the clearer three-part distinction.",
+      "mermaid": "flowchart TD\n  A[Official Unicode SignWriting] --> B[Naming characters]\n  A --> C[Preserving writer-selected symbols]\n  A --> D[Encoding written signs]\n  B --> E[Largely advanced]\n  C --> F[Not preserved cleanly]\n  D --> G[Not compatibly solved]\n\n  classDef core fill:#f5f3ff,color:black,stroke:#7c3aed,stroke-width:3px;\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef good fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  classDef risk fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  class A core;\n  class B,C,D node;\n  class E good;\n  class F,G risk;"
+    },
+    {
+      "id": "character-naming-not-enough",
+      "title": "Character Naming Is Not Enough",
+      "kicker": "3",
+      "summary": "The official block covers base, fill, and rotation characters, but that does not settle symbol identity or written-sign support.",
+      "image_prompts": {
+        "concrete": "Character block slide showing base, fill, and rotation coverage beside unresolved symbol identity, facial inventory, and written-sign model requirements",
+        "abstract": "Named characters leading to unresolved writing-system requirements"
+      },
+      "bullets": [
+        "The official block covers base characters, fills, and rotations",
+        "That does not guarantee stable symbol identity across the full system",
+        "That does not provide a closed shared facial inventory",
+        "That does not provide a compatible written-sign model"
+      ],
+      "speech": "The official block does cover base characters, fills, and rotations. That matters. But it is not enough by itself. Character naming does not guarantee stable symbol identity across the full system, it does not provide a closed shared facial inventory, and it does not provide a compatible model for written signs. This is the point where a symbol block and a usable writing system part company.",
+      "notes": "This slide gives the explicit technical bridge from characters to the deeper issues.",
+      "mermaid": "flowchart TD\n  A[Character block coverage] --> B[Base, fill, rotation characters]\n  B --> C[Still need stable symbol identity]\n  B --> D[Still need facial inventory closure]\n  B --> E[Still need written-sign encoding]\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef risk fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  class A,B node;\n  class C,D,E risk;"
+    },
+    {
+      "id": "facial-model",
+      "title": "The Facial System Moves Symbol Formation Into The Font",
+      "kicker": "4",
+      "summary": "The facial-diacritic model delegates part of symbol formation to font behavior rather than keeping it fixed in a writer-selected inventory.",
+      "image_prompts": {
+        "concrete": "Facial-diacritic standards slide showing writer-selected ISWA symbol identity compared with a facial sequence merged by font behavior",
+        "abstract": "Font-mediated symbol formation contrasted with stable inventory selection"
+      },
+      "bullets": [
+        "Formal SignWriting expects writer-selected ISWA symbols",
+        "The official facial model writes a sequence merged by the font",
+        "There is no closed shared master inventory of final combinations",
+        "Font behavior becomes part of symbol determination"
+      ],
+      "speech": "The facial system deserves special attention because it is not just a rendering variation. In Formal SignWriting, the writer selects a symbol from the shared inventory. In the official facial-diacritic model, the writer writes a sequence that the font merges into a rendered face. That moves part of symbol determination into font behavior. Without a closed shared master inventory of final combinations, different implementations are pushed toward copying one interpretation or inventing another.",
+      "notes": "This is the most technically pointed slide. Keep it calm.",
+      "mermaid": "flowchart LR\n  A[Writer-selected ISWA symbol] --> B[Stable symbol identity]\n\n  C[Facial sequence] --> D[Font merge behavior]\n  D --> E[Rendered face]\n  E --> F[Implementation-dependent result]\n\n  classDef good fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  classDef core fill:#f5f3ff,color:black,stroke:#7c3aed,stroke-width:3px;\n  classDef risk fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  class A,C,D core;\n  class B good;\n  class E,F risk;"
+    },
+    {
+      "id": "sorting-and-collation",
+      "title": "Collation Is A Signal Of Deeper Incompatibility",
+      "kicker": "5",
+      "summary": "Sorting is not a minor tuning issue. It reveals whether the model aligns with practical symbol identity and workflow needs.",
+      "image_prompts": {
+        "concrete": "Collation technical slide showing explicit symbol identity supporting stable sorting while inherent values and facial ambiguity create sorting instability",
+        "abstract": "Sorting behavior revealing deeper symbol-model compatibility"
+      },
+      "bullets": [
+        "Dictionaries and corpora depend on stable ordering",
+        "Facial ambiguity already weakens stable symbol identity",
+        "Inherent first fill and first rotation weaken explicit identity",
+        "Collation problems indicate a deeper model mismatch",
+        "Restoring explicit F1 and R1 would move back toward compatibility"
+      ],
+      "speech": "Collation should not be treated as a small follow-up detail. Dictionaries, corpora, search, and workflow all depend on stable ordering. In the current official model, the facial system already weakens stable symbol identity, and inherent first fill and first rotation values further complicate explicit ordering. Explicit values would preserve the writer's selected symbol directly instead of inferring part of that identity from a canonical default. This is why collation is best treated as a signal of deeper model mismatch.",
+      "notes": "This is where the F1/R1 point belongs.",
+      "mermaid": "flowchart TD\n  A[Explicit symbol identity] --> B[Stable sorting]\n  C[Inherent values and facial ambiguity] --> D[Sorting instability]\n  B --> E[Dictionary and corpus workflows]\n  D --> F[Compatibility signal]\n\n  classDef good fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  classDef risk fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  class A,C node;\n  class B,E good;\n  class D,F risk;"
+    },
+    {
+      "id": "migration-burden",
+      "title": "The Ecosystem Cannot Be Asked To Migrate Blindly",
+      "kicker": "6",
+      "summary": "A standards path becomes valuable when it can serve as stable interchange for real production use. That test has not yet been met.",
+      "image_prompts": {
+        "concrete": "Migration burden slide showing real software, datasets, publications, and corpora requiring preservation before any encoding migration",
+        "abstract": "Existing production assets behind a demonstrated compatibility gate"
+      },
+      "bullets": [
+        "The ecosystem already includes real software, data, and publications",
+        "A migration path must preserve stable symbols and written signs across those assets",
+        "Blind migration pressure is not technical progress",
+        "Compatibility must be demonstrated, not presumed"
+      ],
+      "speech": "The Sutton SignWriting ecosystem already includes real software, real datasets, real corpora, and real publications. A standards path becomes valuable when it can serve as stable interchange for that kind of production use. That means preserving stable symbols and written signs across the existing assets, not only naming characters differently. Without a demonstrated compatibility path, migration pressure is not technical progress. Compatibility has to be shown, not assumed.",
+      "notes": "This slide grounds the standards argument in the existing ecosystem.",
+      "mermaid": "flowchart TD\n  A[Real ecosystem] --> B[Software]\n  A --> C[Datasets]\n  A --> D[Publications]\n  A --> E[Corpora]\n  B --> F[Migration must preserve all]\n  C --> F\n  D --> F\n  E --> F\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#fefce8,color:black,stroke:#ca8a04,stroke-width:2px;\n  class A,B,C,D,E,F node;\n  class F out;"
+    },
+    {
+      "id": "disciplined-next-step",
+      "title": "Disciplined Next Step",
+      "kicker": "7",
+      "summary": "The immediate priority is modest: accurate acknowledgment of the present gap and a disciplined basis for deciding whether renewed technical review is warranted.",
+      "image_prompts": {
+        "concrete": "UTC next-step slide showing accurate acknowledgment, technical review, symbol-model and collation analysis, and decision about renewed follow-up",
+        "abstract": "A measured standards path beginning with accurate acknowledgment"
+      },
+      "bullets": [
+        "Acknowledge current incompatibility",
+        "Acknowledge that stable symbol identity is not preserved cleanly",
+        "Acknowledge unresolved spatial composition",
+        "Acknowledge that part of facial symbol formation is font-mediated",
+        "Review symbol-model and collation issues honestly",
+        "Only reopen follow-up if serious technical review is warranted"
+      ],
+      "speech": "The immediate priority is modest and concrete. Acknowledge that the current official model is not sufficient for compatible production use. Acknowledge that stable symbol identity is not preserved cleanly, especially in the facial system where symbol formation is partly mediated through font behavior. Acknowledge that spatial composition remains unresolved. Review symbol-model and collation issues honestly. Then decide whether follow-up review is warranted on that basis. That is the disciplined starting point.",
+      "notes": "Close on technical judgment, not grievance.",
+      "mermaid": "flowchart TD\n  A[Accurate acknowledgment] --> B[Technical review]\n  B --> C[Decide whether follow-up review is warranted]\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  class A,B,C node;"
+    }
+  ],
+  "publication": {
+    "status": "working-briefing",
+    "doi_candidate": true,
+    "repo_candidate": true,
+    "zenodo_record": "possible",
+    "citation_role": "reference-briefing"
+  }
+}
