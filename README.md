@@ -31,24 +31,20 @@ This repository contains the Unicode and SignWriting technical companion series.
 
 Begin with:
 
-1. [Unicode and SignWriting Overview](entries/overview/essay.md)
-2. [Unicode Overview](entries/unicode-overview/essay.md)
-3. [Developer Notes](entries/developer-notes/essay.md)
-4. [Chronology and Record](entries/chronology-and-record/essay.md)
-5. [Wikimedia Brief](entries/wikimedia-brief/essay.md)
-6. [Draft UTC-Facing Technical Note](entries/utc-technical-note/essay.md)
-7. [Official Unicode SignWriting: The Character Problem and the Written-Sign Problem](https://steveslevinski.me/#series/signed-language-writing-critical-review/official-unicode-signwriting-the-character-problem-and-the-written-sign-problem/primary)
+1. [Unicode and SignWriting Overview](entries/overview/essay.md) - series frame and main compatibility distinction
+2. [Unicode Overview](entries/unicode-overview/essay.md) - baseline compatibility judgment
+3. [Developer Notes](entries/developer-notes/essay.md) - practical implementation guidance for FSW, SWU, official Unicode SignWriting, and bridge tooling
+4. [Chronology and Record](entries/chronology-and-record/essay.md) - public proposal, minute, and technical-response trail
+5. [Wikimedia Brief](entries/wikimedia-brief/essay.md) - public-platform context and why FSW/SWU remain relevant for Wikimedia-facing work
+6. [Draft UTC-Facing Technical Note](entries/utc-technical-note/essay.md) - standards-facing author-stewardship technical position on compatibility, symbol identity, spatial composition, sorting, and migration
+7. [Official Unicode SignWriting: The Character Problem and the Written-Sign Problem](https://steveslevinski.me/#series/signed-language-writing-critical-review/official-unicode-signwriting-the-character-problem-and-the-written-sign-problem/primary) - related standards review in the critical review series
 
 The final standards review listed above belongs to the separate Signed Language Writing Critical Review Series record, DOI `10.5281/zenodo.20042604`.
 
-## Contents
+## Repository Files
 
-- [Unicode and SignWriting Overview](entries/overview/essay.md) - series frame and main compatibility distinction
-- [Unicode Overview](entries/unicode-overview/essay.md) - baseline compatibility judgment
-- [Developer Notes](entries/developer-notes/essay.md) - practical implementation guidance for FSW, SWU, official Unicode SignWriting, and bridge tooling
-- [Wikimedia Brief](entries/wikimedia-brief/essay.md) - public-platform context and why FSW/SWU remain relevant for Wikimedia-facing work
-- [Chronology and Record](entries/chronology-and-record/essay.md) - public proposal, minute, and technical-response trail
-- [Draft UTC-Facing Technical Note](entries/utc-technical-note/essay.md) - standards-facing author-stewardship technical position on compatibility, symbol identity, spatial composition, sorting, and migration
+The reading sequence above contains the main series documents. Additional repository files include:
+
 - [Publishing Notes](publishing.md) - release metadata, citation posture, and artifact register
 
 ## Citation
@@ -61,7 +57,9 @@ Use the series DOI when citing the Unicode and SignWriting series as a whole. Us
 
 ## Platform Context
 
-This repository is one of eight series in the Sutton SignWriting platform release. It supports standards clarity without becoming the whole public or scholarly argument for SignWriting.
+This repository is one of eight series in the Sutton SignWriting platform release. The platform-level record is maintained in the [Sutton SignWriting Platform Record](https://github.com/sutton-signwriting/platform-record) repository.
+
+It supports standards clarity without becoming the whole public or scholarly argument for SignWriting.
 
 ## License
 
