@@ -5,7 +5,7 @@
 This register supports the chronology and the broader distinction between:
 
 - naming characters
-- preserving stable symbol identity
+- preserving production-level symbol identity
 - encoding complete written signs
 
 Links in this register were checked for the v1.0.0 release on 2026-05-15. Live registries, repositories, and Wikimedia records may change after publication.

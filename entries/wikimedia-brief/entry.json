@@ -4,7 +4,7 @@
   "title": "Wikimedia Brief",
   "subtitle": "What Wikimedia needs to understand about Unicode and SignWriting",
   "summary": "A short practical note for Wikimedia staff and collaborators about why naming characters is not enough for current SignWriting project needs.",
-  "synopsis": "Wikimedia and other public-platform readers need to understand why current SignWriting work cannot rely on official Unicode SignWriting alone. The real gap is larger than font support: the facial system affects stable symbol identity, the Sutton SignWriting production stack still uses FSW and SWU, and public explanations should not flatten the problem into a solved-symbol-block story.",
+  "synopsis": "Wikimedia and other public-platform readers need to understand why current SignWriting work cannot rely on official Unicode SignWriting alone. The real gap is larger than font support: the facial system preserves Unicode facial mark categories rather than production-level facial authorship, the Sutton SignWriting production stack still uses FSW and SWU, and public explanations should not flatten the problem into a solved-symbol-block story.",
   "essay": "essay.md",
   "primary_artifact": {
     "file": "essay.md",
@@ -13,15 +13,7 @@
     "public_slug": "primary",
     "publication_designation": "Technical Briefing"
   },
-  "companion_documents": [
-    {
-      "file": "meeting-notes.md",
-      "label": "Discussion Outline",
-      "slug": "meeting-notes",
-      "artifact_type": "meeting-notes",
-      "publication_designation": "Meeting Notes"
-    }
-  ],
+  "companion_documents": [],
   "slides": [
     {
       "id": "wikimedia-baseline",
@@ -33,13 +25,13 @@
         "abstract": "Public-platform needs revealing a practical encoding compatibility issue"
       },
       "bullets": [
-        "Official Unicode SignWriting is not sufficient by itself",
+        "The official Unicode block is not sufficient by itself",
         "Current projects still depend on FSW and SWU",
         "Naming characters is not enough for current project needs",
         "The issue is encoding plus interoperability, not only fonts",
         "That matters for storage, reuse, and maintenance"
       ],
-      "speech": "Wikimedia's starting point should be simple. The Unicode issue around SignWriting is still practical and active. Official Unicode SignWriting is not sufficient by itself for current project needs. Current work still depends on FSW and SWU. Naming characters is not enough for the real storage, reuse, and maintenance needs of Wikimedia projects. The issue is not only fonts. It is also encoding, compatibility, and interoperability across real project workflows.",
+      "speech": "Wikimedia's starting point should be simple. The Unicode issue around SignWriting is still practical and active. The official Unicode block is useful as a character repertoire, but it is not sufficient by itself for current project needs. Current work still depends on FSW and SWU. Naming characters is not enough for the real storage, reuse, and maintenance needs of Wikimedia projects. The issue is not only fonts. It is also encoding, compatibility, and interoperability across real project workflows.",
       "notes": "Open collaboratively. This is the shortest honest framing.",
       "mermaid": "flowchart TD\n  A[Wikimedia project need] --> B[Storage]\n  A --> C[Rendering]\n  A --> D[Reuse and sharing]\n  A --> E[Maintenance]\n  B --> F[Current Unicode gap becomes practical]\n  C --> F\n  D --> F\n  E --> F\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  class A,B,C,D,E,F node;"
     },
@@ -66,21 +58,21 @@
       "id": "real-gap",
       "title": "What The Real Gap Is",
       "kicker": "3",
-      "summary": "The real gap is not only missing fonts. It includes stable symbol identity, written-sign encoding, and interoperability.",
+      "summary": "The real gap is not only missing fonts. It includes production-level identity, written-sign encoding, and interoperability.",
       "image_prompts": {
         "concrete": "Public-platform technical gap slide showing rendering, written-sign compatibility, facial symbol identity, storage, comparison, and reuse",
         "abstract": "Rendering issues connected to deeper data identity and interoperability"
       },
       "bullets": [
         "The issue is larger than rendering",
-        "Naming characters is not the same as preserving stable symbols",
+        "Naming characters is not the same as preserving production-level identity",
         "The official model does not provide a compatible written-sign solution",
         "The facial system shifts part of symbol formation into font behavior",
         "Data storage, comparison, and reuse are involved"
       ],
-      "speech": "The real gap is not only that some fonts are missing. The larger problem is that naming characters is not the same as preserving stable symbols, and the current official model also does not provide a compatible written-sign solution. In the facial system, part of symbol formation shifts into font behavior. That affects not only rendering, but also how data is stored, compared, and reused across systems. This is why the problem matters to Wikimedia as infrastructure rather than only as display.",
+      "speech": "The real gap is not only that some fonts are missing. The larger problem is that naming characters is not the same as preserving production-level identity, and the current official model also does not provide a compatible written-sign solution. In the facial system, the official model preserves Unicode facial mark categories rather than production-level writer-selected facial-symbol identity and authored arrangement in the FSW/SWU sense. This is why the problem matters to Wikimedia as infrastructure rather than only as display.",
       "notes": "This is the core explanatory slide.",
-      "mermaid": "flowchart TD\n  A[Official Unicode SignWriting] --> B[Rendering questions]\n  A --> C[Written-sign compatibility]\n  A --> D[Symbol identity in facial system]\n  C --> E[Storage and reuse impact]\n  D --> E\n  B --> E\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#fefce8,color:black,stroke:#ca8a04,stroke-width:2px;\n  class A,B,C,D node;\n  class E out;"
+      "mermaid": "flowchart TD\n  A[Official Unicode model] --> B[Rendering questions]\n  A --> C[Written-sign compatibility]\n  A --> D[Production facial authorship]\n  C --> E[Storage and reuse impact]\n  D --> E\n  B --> E\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#fefce8,color:black,stroke:#ca8a04,stroke-width:2px;\n  class A,B,C,D node;\n  class E out;"
     },
     {
       "id": "current-stack",

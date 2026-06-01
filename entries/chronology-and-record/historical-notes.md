@@ -2,6 +2,8 @@
 
 **Turning points behind the chronology**
 
+This section interprets the documentary record from the Sutton SignWriting production perspective.
+
 ## The original expectation
 
 One of the most important historical points is that Unicode discussion around Sutton SignWriting was not originally framed as if the symbol block alone would finish the work.
@@ -46,7 +48,7 @@ From the Sutton SignWriting perspective, that was the beginning of a lasting pub
 
 The symbol block had been approved.
 
-That did not mean that stable symbol identity had been fully preserved across the system.
+That did not mean that production-level symbol identity had been fully preserved across the system.
 
 The compatible written-sign problem had not been solved either.
 
@@ -68,11 +70,11 @@ That is part of why the Unicode fork became noisy in public space.
 
 ## The 2020 font moment
 
-Google's Noto Sans SignWriting was historically significant because it made the official Unicode SignWriting design more concrete for outsiders.
+Google's Noto Sans SignWriting was historically significant because it made a public font path for the official Unicode block and facial-diacritic approach more concrete for outsiders.
 
 That mattered in two directions at once:
 
-- it showed the official design could be rendered in a serious public font
+- it showed that a public font path for the official design existed
 - it also increased the chance that readers would assume the deeper writing-system problem was therefore solved
 
 Historically, this is one of the moments where the appearance of progress risked masking continuing incompatibility.

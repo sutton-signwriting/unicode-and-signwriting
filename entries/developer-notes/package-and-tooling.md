@@ -16,7 +16,7 @@ Developers therefore still need tooling to:
 
 That is what a package such as `@sutton-signwriting/unicode8` is for.
 
-The package exists because naming official characters is still a practical need even when stable symbol identity and written-sign support remain unresolved.
+The package exists because naming official characters is still a practical need even when production-level symbol identity and written-sign support remain unresolved.
 
 ## What the package does not mean
 
@@ -24,7 +24,7 @@ The existence of the package does **not** mean:
 
 - official Unicode SignWriting is accepted as the best canonical production path
 - the broader compatibility problem is solved
-- character naming automatically preserves stable symbols
+- character naming automatically preserves production-level symbol identity
 - spatial composition is no longer an issue
 - FSW and SWU have become unnecessary
 
@@ -47,4 +47,4 @@ It is a bridge and processing library.
 
 It helps software deal with official Unicode SignWriting where that standard appears in the world.
 
-It does not mean that character naming, stable symbol identity, and written-sign encoding have all been solved by the same model.
+It does not mean that character naming, production-level symbol identity, and written-sign encoding have all been solved by the same model.

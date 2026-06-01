@@ -9,7 +9,7 @@ For current Sutton SignWriting software and data work:
 - use **FSW** as canonical production text
 - use **SWU** when you need a Unicode-oriented isomorphic form
 - use **ISWA 2010** as the symbol reference layer
-- do not assume official Unicode SignWriting is a drop-in replacement for the Sutton SignWriting Resources
+- do not assume the official Unicode SignWriting model is a drop-in replacement for the Sutton SignWriting Resources
 
 If the production judgment changes in the future because Unicode support genuinely becomes sufficient and compatible, then the recommendation can change too.
 
@@ -37,7 +37,7 @@ SWU matters because it gives an isomorphic Unicode-oriented view of the same mod
 
 It is useful for:
 
-- Unicode-facing inspection
+- Unicode-oriented inspection
 - one-dimensional display of encoded sign structure
 - interchange where Unicode text is expected
 - current AI and dataset workflows that benefit from a more visibly structured Unicode string
@@ -50,9 +50,9 @@ This distinction is one of the main things developers tend to miss on first cont
 
 ## What not to assume about official Unicode SignWriting
 
-Do not assume that official Unicode SignWriting:
+Do not assume that the official Unicode SignWriting model:
 
-- names characters in a way that automatically preserves stable symbols
+- names characters in a way that automatically preserves production-level symbol identity
 - preserves the full ISWA symbol model cleanly
 - can represent full written signs in a compatible way
 - can replace FSW or SWU without redesign
@@ -62,15 +62,15 @@ Do not assume that official Unicode SignWriting:
 
 It encodes much of the character set at the base/fill/rotation character layer.
 
-That is not the same as preserving stable writer-selected symbols.
+That is not the same as preserving production-level writer-selected symbols.
 
 It also does not currently provide a complete compatible written-sign solution.
 
 In the facial system, the model is not simply "writer selects symbols and places them."
 
-Instead, a sequence is interpreted by the font and arranged into a rendered face.
+Instead, a sequence of Unicode facial mark categories is interpreted by the font and arranged into a rendered face.
 
-That means part of the resulting facial arrangement depends on font behavior rather than direct writer-selected ISWA symbols and authored placement.
+That means the official facial model preserves Unicode facial mark categories, but not production-level writer-selected facial-symbol identity and authored facial arrangement in the FSW/SWU sense.
 
 That means a developer should not infer from the existence of official characters that a full application stack is already settled.
 
@@ -84,8 +84,8 @@ The larger problem is interoperability.
 
 Developers need:
 
-- stable writer-selected symbols
-- stable symbol identity
+- stable production-level writer-selected symbols
+- stable production-level symbol identity
 - reliable storage
 - reliable interchange
 - searchability
@@ -94,7 +94,7 @@ Developers need:
 
 Fonts alone do not provide those things.
 
-They also do not settle which final facial forms exist as stable shared symbols when the model pushes composition into font interpretation.
+They also do not settle which production-level facial forms and authored arrangements are preserved when the model pushes composition into font interpretation.
 
 This is the practical reason developer discussions drift quickly from fonts into encoding and conversion.
 
@@ -123,7 +123,8 @@ not without a clear compatibility study first
 
 Before any migration, ask:
 
-- are stable writer-selected symbols preserved across the full system
+- are production-level writer-selected symbols preserved across the full system
+- are production-level facial-symbol identity and authored facial arrangement preserved in the FSW/SWU sense
 - can the full written sign be represented without loss
 - can existing sorting be preserved
 - can current fonts and renderers still work
@@ -155,7 +156,7 @@ In practice:
 
 - **FSW** for canonical production text
 - **SWU** for supported Unicode-oriented interchange and inspection
-- **official Unicode SignWriting** only with caution and only with a clear understanding that it does not currently replace the Sutton SignWriting production stack
+- **official Unicode SignWriting model** only with caution and only with a clear understanding that it does not currently replace the Sutton SignWriting production stack
 
 ## A note about `@sutton-signwriting/unicode8`
 

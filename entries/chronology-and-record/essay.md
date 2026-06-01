@@ -19,7 +19,7 @@ It also explains why later public statements of success did not settle the matte
 Over time, the record clarified a second distinction:
 
 - naming characters
-- preserving stable symbol identity
+- preserving production-level symbol identity
 - encoding complete written signs
 
 ## Main Unicode and related documents
@@ -86,7 +86,7 @@ The remaining years of discussion show that this inference was too strong.
 
 The symbol block had advanced.
 
-That did not mean that stable symbol identity had been fully preserved across the system.
+That did not mean that production-level symbol identity had been fully preserved across the system.
 
 It also did not mean that written signs had a compatible encoding model.
 
@@ -122,9 +122,9 @@ Treat 2015 as:
 
 ### 2020
 
-- Google released **Noto Sans SignWriting**, the first high-visibility font implementing the official Unicode SignWriting design introduced in Unicode 8.0.0, including the facial-diacritic approach.
+- Google released **Noto Sans SignWriting**, a high-visibility public font path for the official Unicode block introduced in Unicode 8.0.0, including the facial-diacritic approach.
 
-This mattered because it showed that a font could be produced for the official design, but it did not solve the broader compatibility, symbol-identity, and layout questions.
+This mattered because it showed that a public font path existed for the official design, but it did not demonstrate audited production readiness, lossless migration from FSW/SWU, compatibility across independent implementations, or resolution of the broader symbol-identity and layout questions.
 
 ### 2026
 

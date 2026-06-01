@@ -4,7 +4,7 @@
   "title": "Chronology and Record",
   "subtitle": "Official submissions, minutes, and related documents",
   "summary": "A dated record of the main Unicode and related SignWriting documents relevant to current compatibility and standards discussions.",
-  "synopsis": "The main Unicode proposals, support letters, collation responses, design notes, and related records from 2011 forward create the documentary path behind the current distinctions among character naming, stable symbol identity, and written-sign encoding.",
+  "synopsis": "The main Unicode proposals, support letters, collation responses, design notes, and related records from 2011 forward create the documentary path behind the current distinctions among character naming, production-level symbol identity, and written-sign encoding.",
   "essay": "essay.md",
   "primary_artifact": {
     "file": "essay.md",
@@ -46,7 +46,7 @@
         "Collation and design concerns were documented",
         "The documentary trail explains the present position"
       ],
-      "speech": "The current Unicode position did not emerge from one late complaint or one private disagreement. It developed across multiple proposals, support letters, minutes, technical responses, and later design discussions. The documentary trail matters because it shows what was expected, what changed, what concerns were raised, and what advanced and what did not. It also shows that character naming, stable symbol identity, and written-sign support did not advance equally.",
+      "speech": "The current Unicode position did not emerge from one late complaint or one private disagreement. It developed across multiple proposals, support letters, minutes, technical responses, and later design discussions. The documentary trail matters because it shows what was expected, what changed, what concerns were raised, and what advanced and what did not. It also shows that character naming, production-level symbol identity, and written-sign support did not advance equally.",
       "notes": "Set the deck up as factual and documentary.",
       "mermaid": "flowchart TD\n  A[Proposals] --> E[Current position]\n  B[Minutes] --> E\n  C[Responses] --> E\n  D[Technical notes] --> E\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  class A,B,C,D,E node;"
     },
@@ -66,7 +66,7 @@
         "It also helps explain later distinctions between characters, symbols, and written signs",
         "The second stage never became a workable compatible standard"
       ],
-      "speech": "The early record matters because it reflects a two-stage expectation. First, encode the symbol set. Second, later address the encoding that takes symbols and turns them into signs. That distinction was important at the time, and it remains important now. It also helps explain a later distinction between naming characters, preserving stable symbols, and encoding complete written signs. The first stage moved forward. The second never became a workable compatible standard. That is one reason later claims of closure are hard to accept as technically adequate.",
+      "speech": "The early record matters because it reflects a two-stage expectation. First, encode the symbol set. Second, later address the encoding that takes symbols and turns them into signs. That distinction was important at the time, and it remains important now. It also helps explain a later distinction between naming characters, preserving production-level symbols, and encoding complete written signs. The first stage moved forward. The second never became a workable compatible standard. That is one reason later claims of closure are hard to accept as technically adequate.",
       "notes": "This is the chronology hinge. Keep the two-stage idea explicit.",
       "mermaid": "flowchart LR\n  A[Stage 1: Symbol set proposal] --> B[Advanced]\n  A --> C[Stage 2: Written-sign encoding]\n  C --> D[Expected later]\n  D --> E[No workable compatible standard]\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef risk fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  class A,B,C,D node;\n  class E risk;"
     },
@@ -74,7 +74,7 @@
       "id": "2015-turn",
       "title": "2015: Block Approval Did Not End the Problem",
       "kicker": "3",
-      "summary": "The official block was approved, but stable symbol identity and written-sign questions remained active rather than resolved.",
+      "summary": "The official block was approved, but production-level symbol identity and written-sign questions remained active rather than resolved.",
       "image_prompts": {
         "concrete": "Unicode 8 approval slide showing block approval beside continuing collation, symbol identity, and written-sign compatibility questions",
         "abstract": "Formal approval separated from unresolved practical compatibility"
@@ -119,13 +119,13 @@
         "abstract": "Historical evidence clarifying the present compatibility critique"
       },
       "bullets": [
-        "Character naming, stable symbol identity, and written-sign encoding did not advance equally",
+        "Character naming, production-level symbol identity, and written-sign encoding did not advance equally",
         "The symbol stage and the written-sign stage were distinct",
         "Collation and model questions were real",
         "Later technical work did not complete the path",
         "The present position is historically grounded"
       ],
-      "speech": "The value of the record is not nostalgia. It is diagnostic clarity. The documentary trail supports the current compatibility critique. It shows a real two-stage expectation, real collation and model concerns, and later technical work that did not complete the path. It also shows that character naming, stable symbol identity, and written-sign encoding did not advance equally. That is why the present position should be read as historically grounded rather than as late-stage resistance.",
+      "speech": "The value of the record is not nostalgia. It is diagnostic clarity. The documentary trail supports the current compatibility critique. It shows a real two-stage expectation, real collation and model concerns, and later technical work that did not complete the path. It also shows that character naming, production-level symbol identity, and written-sign encoding did not advance equally. That is why the present position should be read as historically grounded rather than as late-stage resistance.",
       "notes": "Close with the interpretive value of the record.",
       "mermaid": "flowchart TD\n  A[Two-stage expectation] --> D[Historically grounded present position]\n  B[Collation and model concerns] --> D\n  C[Incomplete later follow-through] --> D\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  class A,B,C,D node;"
     }

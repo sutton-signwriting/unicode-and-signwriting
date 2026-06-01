@@ -6,9 +6,9 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-green.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Platform](https://img.shields.io/badge/platform-Sutton%20SignWriting-blueviolet)](https://doi.org/10.5281/zenodo.20041043)
 
-*Compatibility, chronology, developer guidance, and standards-facing technical notes*
+*Compatibility, chronology, developer guidance, and practitioner-facing boundary notes*
 
-This repository contains the Unicode and SignWriting technical companion series. It keeps the v1.0.0 public record, compatibility judgment, implementation guidance, Wikimedia context, and possible standards next steps in one bounded place.
+This repository contains the Unicode and SignWriting technical companion series. It keeps the v1.0.0 public record, compatibility judgment, implementation guidance, Wikimedia context, and production-boundary guidance in one bounded place.
 
 ## Repository Details
 
@@ -36,7 +36,7 @@ Begin with:
 3. [Developer Notes](entries/developer-notes/essay.md) - practical implementation guidance for FSW, SWU, official Unicode SignWriting, and bridge tooling
 4. [Chronology and Record](entries/chronology-and-record/essay.md) - public proposal, minute, and technical-response trail
 5. [Wikimedia Brief](entries/wikimedia-brief/essay.md) - public-platform context and why FSW/SWU remain relevant for Wikimedia-facing work
-6. [Draft UTC-Facing Technical Note](entries/utc-technical-note/essay.md) - standards-facing author-stewardship technical position on compatibility, symbol identity, spatial composition, sorting, and migration
+6. [Facial Orthography Boundary](entries/facial-orthography-boundary/essay.md) - practitioner-facing boundary note for Unicode facial composition and Sutton production text
 7. [Official Unicode SignWriting: The Character Problem and the Written-Sign Problem](https://steveslevinski.me/#series/signed-language-writing-critical-review/official-unicode-signwriting-the-character-problem-and-the-written-sign-problem/primary) - related standards review in the critical review series
 
 The final standards review listed above belongs to the separate Signed Language Writing Critical Review Series record, DOI `10.5281/zenodo.20042604`.

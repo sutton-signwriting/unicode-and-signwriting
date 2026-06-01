@@ -6,7 +6,7 @@ Status note: This is a Sutton SignWriting project briefing for Wikimedia-facing 
 
 ## Short answer
 
-Current official Unicode SignWriting support is not yet sufficient for real-world Sutton SignWriting production use.
+The official Unicode SignWriting block is useful as a character repertoire, but it is not sufficient by itself for real-world Sutton SignWriting production use.
 
 Wikimedia projects that want to host or work with SignWriting therefore still need practical, stable solutions for text storage, structured sign representation, display, search, and compatibility with existing datasets.
 
@@ -20,19 +20,19 @@ You may see:
 
 Unicode includes an official SignWriting block introduced in Unicode 8.0.0.
 
-That block names many characters, but it does not yet deliver a complete, compatible solution for stable symbols and plane-based written signs.
+That block names many characters, but it does not yet deliver a complete, compatible solution for production-level facial authorship and plane-based written signs.
 
 ## The real gap
 
-The gap is larger than missing fonts or rendering. Official Unicode SignWriting does not currently provide a workable compatible solution for:
+The gap is larger than missing fonts or rendering. The official Unicode SignWriting model does not currently provide a workable compatible solution for:
 
-- stable symbol identity across the full system
+- production-level symbol identity across the full system
 - direct writer selection of final symbols (especially in the facial system)
 - full written signs as they exist in production
 - spatial composition (the plane-based nature of the writing system)
 - seamless compatibility with current Sutton SignWriting datasets and tooling
 
-In the facial system specifically, the official model asks the writer to enter a sequence of elements; the font then interprets and arranges them. This shifts part of symbol formation into font behavior rather than preserving a stable, writer-selected symbol inventory. That affects not just display but also how data is stored, compared, and reused.
+In the facial system specifically, the official model preserves Unicode facial mark categories, but not production-level writer-selected facial-symbol identity and authored facial arrangement in the FSW/SWU sense. The font interprets and arranges the mark sequence into a rendered face. That affects not just display but also how data is stored, compared, and reused.
 
 ## What is used in practice today
 
@@ -60,6 +60,16 @@ For this release, P14164 and its formatter URL were checked on 2026-05-15. Becau
 That matters because Wikimedia is not deciding whether SignWriting has ever touched its ecosystem.
 
 The more realistic question is how accurately to document and understand an existing footprint that has already depended on custom infrastructure, bridge tooling, and long-lived external services.
+
+## Current Wikimedia-Unicode Context
+
+This section is a release-time snapshot, not an operational audit.
+
+The Wikimedia Foundation has been a Unicode Consortium member since March 2024. Its public membership page describes the membership as a way to stay aware of language-support and script issues relevant to Wikimedia projects and to act as a connecting voice between Wikimedia communities and the Unicode Consortium.
+
+That page also lists SignWriting and sign languages among Unicode-related topics under exploration in 2026. The public summary identifies font and character-model mismatches, concerns that the official model does not preserve production-level symbol identity, possible rendering or page-breaking issues in Incubator sign-language test wikis, and a SignWriting keyboard developed by User:Yair rand.
+
+That context matters because Wikimedia already has a plausible Unicode-facing channel for language-support issues. For SignWriting, the useful first step is not a broad new standards push. It is an accurate factual baseline: current Wikimedia-facing SignWriting work depends on FSW/SWU, custom infrastructure, and production tools that the official Unicode block does not replace.
 
 ## Why this matters specifically to Wikimedia
 
@@ -92,3 +102,9 @@ A productive first step is simply to establish a shared factual baseline:
 - decide together whether reopening Unicode-level discussion is worth the investment
 
 Any future Unicode discussion is only worth the effort if it begins from those realities rather than from the assumption that the compatibility problem is already solved.
+
+## Sources And Context
+
+- [WMF membership with Unicode Consortium](https://www.mediawiki.org/wiki/WMF_membership_with_Unicode_Consortium)
+- [Wikidata property P14164](https://www.wikidata.org/wiki/Property:P14164)
+- [Wikimedia Incubator sign-language test wikis](https://incubator.wikimedia.org/wiki/Category:Incubator:Test_wikis_of_sign_languages)
