@@ -8,21 +8,24 @@ Status note: This companion document supports *Facial Orthography Boundary*. It 
 
 The practical rule is simple:
 
-- use the official Unicode Sutton SignWriting block for character citation, standards discussion, Unicode-model research, limited symbol display, and work explicitly scoped to the official block
+- treat the official Unicode Sutton SignWriting block as a Unicode-scoped artifact for Unicode-model documentation, implementation audits, compatibility warnings, limited display experiments, and research explicitly scoped to the official block
 - use FSW/SWU, Sutton-compatible tooling, or an equivalent coordinate-preserving production model for complete written signs, dictionaries, corpora, education, publication, archives, datasets, AI, and machine-learning workflows
+- do not use the official Unicode block as the basis for production authoring, migration, citation, archiving, corpora, dictionaries, education, search, AI datasets, or preservation of Sutton SignWriting
 
-Do not represent Noto Sans SignWriting, font support, or character-block support as proof of production-compatible text interchange. Noto demonstrates that a public font path for the official Unicode approach exists. It does not demonstrate audited production readiness, lossless migration from FSW/SWU, or compatibility across independent implementations.
+Do not represent Noto Sans SignWriting, font support, or character-block support as proof of production-compatible text interchange or general production authoring. Noto demonstrates that a public font path for the official Unicode approach exists. It does not demonstrate audited production readiness, lossless migration from FSW/SWU, renderer-independent facial authoring, or compatibility across independent implementations.
 
 ## Implementation Actions
 
 Implementers should:
 
-1. Identify whether the task requires complete written signs or only character-level repertoire support.
+1. Identify whether the task requires production Sutton SignWriting or only Unicode-model analysis.
 2. Use FSW/SWU, Sutton-compatible tooling, or an equivalent coordinate-preserving production model for complete written signs.
-3. Treat official Unicode SignWriting support as Unicode-model support unless complete production preservation is separately demonstrated by the surrounding protocol.
+3. Treat official Unicode SignWriting support as Unicode-model support, not as a production character layer.
 4. Avoid presenting Noto/font support as proof of production-compatible text interchange.
-5. Preserve source FSW/SWU or equivalent production data when generating images, fonts, derived datasets, or display-only outputs.
-6. Document which layer carries the authored written sign: production text, Unicode character sequence, rendered image, private payload, or application-specific data.
+5. Do not treat Unicode-native authoring as production-compatible for general Sutton facial writing unless authored facial arrangement is preserved independently of the renderer.
+6. Preserve source FSW/SWU or equivalent production data when generating images, fonts, derived datasets, or display-only outputs.
+7. Document which layer carries the authored written sign: production text, Unicode character sequence, rendered image, private payload, or application-specific data.
+8. Treat lossy projection into the official Unicode facial model as diagnostic mapping, not production citation, publication, preservation, or interchange.
 
 ## Preservation Guidance
 
@@ -39,6 +42,7 @@ The boundary conclusion would need revision only if a model demonstrated:
 - preservation of complete written-sign boundaries
 - preservation of writer-selected symbol identity
 - preservation of writer-selected facial-symbol identity and authored facial arrangement
+- renderer-independent authoring of general Sutton facial writing
 - stable behavior across independent implementations
 - search, sorting, rendering, citation, revision, archive, corpus, dataset, AI, and machine-learning workflows over complete written signs
 

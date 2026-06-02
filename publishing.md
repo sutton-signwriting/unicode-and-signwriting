@@ -20,17 +20,17 @@
 
 ## Description
 
-The standards and compatibility series for Unicode and SignWriting: Unicode chronology, official encoding status, production-compatibility judgments, developer guidance, Wikimedia context, and practitioner-facing boundary notes.
+The standards and compatibility series for Unicode and SignWriting: Unicode chronology, official block/model status, production-compatibility judgments, developer guidance, Wikimedia context, and practitioner-facing boundary notes.
 
 ## Claim Role
 
 - Primary claim lane: standards and compatibility.
-- Cite this series for Unicode chronology, official encoding status, compatibility judgments, developer guidance, Wikimedia context, and practitioner-facing boundary notes.
+- Cite this series for Unicode chronology, official block/model status, compatibility judgments, developer guidance, Wikimedia context, and practitioner-facing boundary notes.
 - Route public foundations, writing-system theory, adoption evidence, Formal SignWriting specifications, and stewardship claims to the companion series built for those layers.
 
 ## Repository Description
 
-Technical briefings and documentary notes on Unicode chronology, official encoding status, FSW/SWU production encodings, compatibility limits, developer guidance, Wikimedia context, and practitioner-facing boundary guidance.
+Technical briefings and documentary notes on Unicode chronology, official block/model status, FSW/SWU production encodings, compatibility limits, developer guidance, Wikimedia context, and practitioner-facing boundary guidance.
 
 ## Keywords
 

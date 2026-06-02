@@ -7,22 +7,24 @@ This table compares suitability for Sutton-compatible production workflows, not 
 | Question | FSW | SWU | Official Unicode block/model |
 | --- | --- | --- | --- |
 | Conformant official Unicode SignWriting | No | No | Yes |
-| Names a SignWriting character repertoire | Yes | Yes | Yes |
+| Names an official Unicode character repertoire | No | No | Yes |
+| Functions as a production character layer for Sutton SignWriting | Yes | Yes, as a production-isomorphic representation | No |
 | Functions as a de facto production standard in Sutton-compatible workflows | Yes | Yes | No |
 | Demonstrated in current production text use | Yes | Yes | Not as the primary production path |
 | Drop-in compatibility with existing datasets | Yes | Supported by conversion and isomorphism | No |
 | Can serve as current canonical production encoding | Yes | Supported, but not usually canonical | No |
-| Suitable for current AI and dataset workflows | Yes | Yes | Limited and ecosystem-dependent |
-| Preserves writer-selected symbol identity across the production model | Yes | Yes | Not demonstrated |
-| Keeps final facial-symbol identity selected by the writer | Yes | Yes | Not in the same production-compatible sense |
-| Preserves authored facial-symbol arrangement | Yes | Yes | Not in the same production-compatible sense |
-| Identifies the authored written face before rendering | Yes | Yes | Not demonstrated for `HEAD + marks` |
+| Suitable for current AI and dataset workflows | Yes | Yes | No for production datasets |
+| Preserves writer-selected symbol identity across the production model | Yes | Yes | No in the FSW/SWU production sense |
+| Keeps final facial-symbol identity selected by the writer | Yes | Yes | No in the FSW/SWU production sense |
+| Preserves authored facial-symbol arrangement | Yes | Yes | No for `HEAD + marks` |
+| Identifies the authored written face before rendering | Yes | Yes | No for `HEAD + marks` |
+| Supports renderer-independent facial authoring for complex faces | Yes | Yes | No for `HEAD + marks` |
 | Uses a head-plus-mark facial-diacritic model | No | No | Yes |
 | Requires renderer-supplied facial orthography for nontrivial faces | No | No | Yes, under `HEAD + marks` |
-| Keeps unsettled facial orthographic decisions with writers and communities | Yes | Yes | Not demonstrated for `HEAD + marks` |
+| Keeps unsettled facial orthographic decisions with writers and communities | Yes | Yes | No for `HEAD + marks` |
 | Avoids assuming orthographic closure before community closure exists | Yes | Yes | Not for `HEAD + marks` |
-| Supports community-specific facial orthographic development from preserved written evidence | Yes | Yes | Not demonstrated for `HEAD + marks` |
-| Allows future fonts to recover authored facial composition from stored data | Yes, because the production data is preserved | Yes, because it is production-isomorphic | Not demonstrated for `HEAD + marks` |
+| Supports community-specific facial orthographic development from preserved written evidence | Yes | Yes | No for `HEAD + marks` |
+| Allows future fonts to recover authored facial composition from stored data | Yes, because the production data is preserved | Yes, because it is production-isomorphic | No for `HEAD + marks` |
 | Fits ordinary complex-script rendering analogy | Not the issue | Not the issue | Only if HEAD plus marks are accepted as the production text identity |
 | Had demonstrated lossless production migration at encoding time | Already production | Production-isomorphic support | No |
 | Requires workarounds when complex faces exceed the implementation theory | No | No | Yes, under `HEAD + marks`, unless another carrier is used |
@@ -46,23 +48,27 @@ The main distinction is:
 - leaving facial orthographic decisions with writers and communities
 - supporting ordinary production workflows without requiring a renderer to complete the written face
 
-The current official Unicode SignWriting block reaches the character-naming point much more clearly than the production facial-writing point.
+The current official Unicode SignWriting block reaches the Unicode character-naming point much more clearly than the production facial-writing point.
 
-The strongest compatibility question is not whether official Unicode names SignWriting symbols. It does. The question is whether its head-plus-mark facial-diacritic model should be treated as a Unicode-specific composition model rather than a realistic production migration path for general Sutton facial writing.
+The strongest compatibility question is not whether official Unicode names Unicode SignWriting characters. It does. The question is whether its head-plus-mark facial-diacritic model should be treated as a Unicode-specific composition model rather than a realistic production migration or general authoring path for Sutton facial writing.
 
-Production compatibility is a preservation claim. If the official block is treated as production support, the model should identify a tested, lossless migration path from existing FSW/SWU data. The burden should not be reversed onto production users to assume compatibility until they disprove it case by case.
+It should be treated as a Unicode-specific composition model. It should not be treated as a production character layer, production citation layer, or production foundation for Sutton SignWriting.
+
+Production compatibility is a preservation and authoring claim. The official block does not identify a tested, lossless migration path from existing FSW/SWU data or a renderer-independent authoring path for general Sutton facial writing. The burden should not be reversed onto production users to assume compatibility until they disprove it case by case.
 
 This is not a claim of linguistic authority. FSW/SWU compatibility means that a text model preserves authored written data needed for parsing, rendering, searching, sorting, interchange, archives, corpora, and production workflows. It does not decide whether a written form is good, preferred, standard, local, poetic, pedagogical, or community-approved.
 
 FSW and SWU should be understood as de facto production standards within Sutton-compatible SignWriting interchange. SWU is not official Unicode SignWriting and should not be described as conformant use of the official block. That distinction is not proof by itself that the official Unicode model is inadequate; SWU use can reflect history, tooling, migration costs, and ecosystem preference. It is still an important production fact and warning: implementers should not infer production compatibility from official Unicode status when the working ecosystem uses a different, production-isomorphic model.
 
+Official Unicode stability is Unicode stability. It is not production stability for Sutton SignWriting. A stable Unicode-internal artifact can still be structurally inadequate as a production text model.
+
 ## Historical Compatibility Burden
 
-The official block should not be treated as a proven production migration target merely because it was encoded.
+The official block should not be treated as a proven production migration or authoring target merely because it was encoded.
 
-The historical record matters because the compatibility claim was prospective. The early Unicode path treated SignWriting as a staged problem: first encode the symbol repertoire, then address the encoding that turns symbols into written signs. The character block advanced. The demonstrated production-compatible migration path did not.
+The historical record matters because the compatibility claim was prospective. The early Unicode path treated SignWriting as a staged problem: first encode a Unicode character repertoire, then address the encoding that turns symbols into written signs. The character block advanced. The demonstrated production-compatible migration path did not.
 
-By Unicode 8.0.0, no tested lossless migration path from general FSW/SWU production data had been identified. No production adoption of the official facial model by the Sutton SignWriting ecosystem had been demonstrated. Later font support, including Noto Sans SignWriting, demonstrates that a public font path for the official Unicode approach exists; it does not demonstrate audited production readiness, lossless migration from FSW/SWU, or compatibility across independent implementations.
+By Unicode 8.0.0, no tested lossless migration path from general FSW/SWU production data had been identified. No production adoption of the official facial model by the Sutton SignWriting ecosystem had been demonstrated. Later font support, including Noto Sans SignWriting, demonstrates that a public font path for the official Unicode approach exists; it does not demonstrate audited production readiness, lossless migration from FSW/SWU, renderer-independent facial authoring, or compatibility across independent implementations.
 
 ## Renderer-Supplied Facial Orthography
 
@@ -86,6 +92,6 @@ The same issue affects future orthographic development. Communities need preserv
 
 Noto Sans SignWriting should be treated as a public font path for the official Unicode 8 approach.
 
-That does not settle the production-compatibility question. Noto Sans SignWriting demonstrates that a public font path for the official Unicode approach exists. It does not demonstrate audited production readiness, lossless migration from FSW/SWU, or compatibility across independent implementations.
+That does not settle the production-compatibility question. Noto Sans SignWriting demonstrates that a public font path for the official Unicode approach exists. It does not demonstrate audited production readiness, lossless migration from FSW/SWU, renderer-independent facial authoring, or compatibility across independent implementations.
 
 Even a fully corrected font would not change the preservation boundary: a renderer cannot recover authored facial arrangement from a sequence that did not store it.
