@@ -4,14 +4,15 @@
   "title": "Facial Orthography Boundary",
   "subtitle": "Why official Unicode SignWriting is not a production basis for facial writing",
   "summary": "A production-first boundary note: the official Unicode SignWriting block is a Unicode-scoped character-encoding artifact, not the Sutton SignWriting production symbol repertoire, production text model, or production basis for complete written signs.",
-  "synopsis": "This note is a practitioner guide for choosing text models, tools, corpora, datasets, archives, publications, educational workflows, and AI workflows for Sutton SignWriting. It evaluates the official Unicode artifact by the production function people are likely to assign to it, rather than by whether Unicode or UTC promised a complete Sutton SignWriting production text model. It states the core boundary argument early: Sutton SignWriting production text must preserve the written sign the author composed; for facial writing, that includes selected Sutton SignWriting facial symbols and authored facial arrangement; official Unicode facial writing stores U+1D9FF SIGNWRITING HEAD plus nonspacing facial marks; missing authored arrangement cannot be recovered from a sequence that never stored it; therefore official Unicode SignWriting should not be used as the production basis for Sutton SignWriting facial writing. It clarifies that preserving authored facial arrangement keeps written evidence available for community orthographic development without declaring every placement difference canonical spelling in advance, and that reliable text interchange becomes more important as SignWriting enters AI, machine-learning, corpus, and dataset workflows. Several sections prepare readers for arguments that appear in standards discussions or implementation documentation. The note explains why complete written signs are text elements rather than mere layout, why authored spatial layout is plain-text content for Sutton SignWriting, why serialization is not linearization, why notation-style classification confirms rather than weakens the production boundary, why FSW/SWU-based corpus, dataset, machine-translation, and language-modeling workflows treat complete written signs as language text units rather than notation-only graphics, why the Unicode record contains a preservation mismatch around spatial spelling and higher-level scope, why authored SignWriting coordinates are not the same as font-supplied positioning coordinates, why the requirement is preservation in the production text model and serialization rather than ordinary Unicode coordinate characters, why treating the official block as a symbol layer completed elsewhere does not make it the production basis, why MusicXML-style analogies do not preserve the written-language text element, why higher-level coordinates do not rescue the official facial sequence, why better fonts cannot repair unstored authored facial composition, why Unicode-native authoring remains renderer-dependent as a production basis for faces, why conformance tests do not settle the production boundary, why implementation claims can create production confusion, and why production work should use FSW/SWU, Sutton SignWriting-compatible tooling, or an equivalent coordinate-preserving production model.",
+  "synopsis": "This practitioner guide helps readers choose Sutton SignWriting text models, tools, corpora, datasets, archives, publications, education, and AI workflows. It evaluates official Unicode by the production function people are likely to assign to it, rather than by whether Unicode or UTC promised a complete production text model. The boundary is direct: Sutton SignWriting production text must preserve the authored written sign; for facial writing, that includes selected Sutton SignWriting facial symbols and authored arrangement. Official Unicode facial writing stores U+1D9FF SIGNWRITING HEAD plus nonspacing facial marks, so missing authored arrangement cannot be recovered and official Unicode SignWriting should not be used as the production basis for Sutton SignWriting facial writing. The note explains that preserving authored facial arrangement keeps evidence available for community orthographic development without declaring every placement difference canonical, and that reliable interchange matters in AI, machine-learning, corpus, and dataset workflows. It separates text-model requirements from rendering: complete written signs are text elements, authored spatial layout is plain-text content, serialization is not linearization, and coordinates or equivalent spatial relations belong in the production text model and serialization, not necessarily in ordinary Unicode coordinate characters. It also addresses standards and implementation objections: notation-style classification confirms the boundary; Unicode has a preservation mismatch around spatial spelling and higher-level scope; FSW/SWU-based workflows treat complete written signs as language text units; and MusicXML analogies, added coordinates, better fonts, Unicode-native authoring, conformance tests, and implementation claims do not repair the official facial sequence. Production work should use FSW/SWU, Sutton SignWriting-compatible tooling, or an equivalent coordinate-preserving model.",
   "essay": "essay.md",
   "primary_artifact": {
     "file": "essay.md",
     "artifact_type": "technical-briefing",
     "public_label": "Facial Orthography Boundary",
     "public_slug": "primary",
-    "publication_designation": "Facial Orthography Boundary"
+    "publication_designation": "Facial Orthography Boundary",
+    "cover_summary": "Production text for Sutton SignWriting must preserve the written sign the author composed. For facial writing, that includes selected facial symbols and authored arrangement. Official Unicode stores a head plus nonspacing facial marks, leaving facial construction to rendering. This note explains why that model is a Unicode-scoped artifact, not a production basis for complete Sutton SignWriting signs."
   },
   "companion_documents": [
     {
@@ -19,14 +20,16 @@
       "label": "Compatibility Matrix",
       "slug": "compatibility-matrix",
       "artifact_type": "compatibility-matrix",
-      "publication_designation": "Compatibility Matrix"
+      "publication_designation": "Compatibility Matrix",
+      "cover_summary": "Matrix of production requirements, official Unicode behavior, and resulting risks for Sutton SignWriting facial writing. It shows where the head-plus-mark model loses authored facial arrangement and why added coordinates, fonts, conformance tests, or implementation claims do not repair that loss."
     },
     {
       "file": "production-warning.md",
       "label": "Production Warning",
       "slug": "production-warning",
       "artifact_type": "production-warning",
-      "publication_designation": "Unicode SignWriting Production Warning"
+      "publication_designation": "Unicode SignWriting Production Warning",
+      "cover_summary": "Short production warning for implementers, archivists, educators, publishers, and dataset builders: do not route Sutton SignWriting production work through the official Unicode facial model. Use FSW/SWU or an equivalent coordinate-preserving model that preserves selected symbols, sign boundaries, and authored facial arrangement."
     }
   ],
   "slides": [
