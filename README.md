@@ -33,11 +33,12 @@ Begin with:
 
 1. [Unicode and SignWriting Overview](entries/overview/essay.md) - series frame and main compatibility distinction
 2. [Unicode Overview](entries/unicode-overview/essay.md) - baseline compatibility judgment
-3. [Developer Notes](entries/developer-notes/essay.md) - practical implementation guidance for FSW, SWU, official Unicode SignWriting, and bridge tooling
-4. [Chronology and Record](entries/chronology-and-record/essay.md) - public proposal, minute, and technical-response trail
-5. [Wikimedia Brief](entries/wikimedia-brief/essay.md) - public-platform context and why FSW/SWU remain relevant for Wikimedia-facing work
-6. [Facial Orthography Boundary](entries/facial-orthography-boundary/essay.md) - practitioner-facing boundary note for Unicode facial composition and Sutton production text
-7. [Official Unicode SignWriting: The Character Problem and the Written-Sign Problem](https://steveslevinski.me/#series/signed-language-writing-critical-review/official-unicode-signwriting-the-character-problem-and-the-written-sign-problem/primary) - related standards review in the critical review series
+3. [Unicode SignWriting Production Warning](entries/facial-orthography-boundary/production-warning.md) - quick format-decision warning for production text, archives, corpora, education, AI datasets, and publication
+4. [Developer Notes](entries/developer-notes/essay.md) - practical implementation guidance for FSW, SWU, official Unicode SignWriting, and bridge tooling
+5. [Chronology and Record](entries/chronology-and-record/essay.md) - public proposal, minute, and technical-response trail
+6. [Wikimedia Brief](entries/wikimedia-brief/essay.md) - public-platform context and why FSW/SWU remain relevant for Wikimedia-facing work
+7. [Facial Orthography Boundary](entries/facial-orthography-boundary/essay.md) - full practitioner-facing boundary note for Unicode facial composition and Sutton SignWriting production text
+8. [Official Unicode SignWriting: The Character Problem and the Written-Sign Problem](https://steveslevinski.me/#series/signed-language-writing-critical-review/official-unicode-signwriting-the-character-problem-and-the-written-sign-problem/primary) - related standards review in the critical review series
 
 The final standards review listed above belongs to the separate Signed Language Writing Critical Review Series record, DOI `10.5281/zenodo.20042604`.
 

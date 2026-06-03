@@ -4,7 +4,7 @@
   "title": "Unicode Overview",
   "subtitle": "Current position and why the issue keeps returning",
   "summary": "Short baseline explanation of why character naming, production-level facial authorship, and written signs remain different questions for SignWriting.",
-  "synopsis": "The official Unicode SignWriting block can name much of the character layer, but its facial model preserves Unicode facial mark categories rather than production-level writer-selected facial-symbol identity and authored facial arrangement in the FSW/SWU sense. It also complicates some ordinary text operations and does not provide a compatible model for complete written signs in practice. The real issues include the facial-diacritic model, spatial composition, search, sorting, tooling, dataset compatibility, and the difference between encoded characters and usable writing.",
+  "synopsis": "The official Unicode SignWriting block can name much of the character layer, but it is not a production-preserving text model. Its facial model preserves Unicode facial mark categories rather than selected ISWA 2010 facial symbols and authored facial arrangement. It also complicates some ordinary text operations and does not provide a compatible model for complete written signs in practice. The real issues include the facial-diacritic model, unresolved spatial composition, search, sorting, tooling, dataset compatibility, and the difference between encoded characters and usable writing.",
   "essay": "essay.md",
   "primary_artifact": {
     "file": "essay.md",
@@ -27,18 +27,18 @@
       "id": "baseline",
       "title": "The Baseline Problem",
       "kicker": "1",
-      "summary": "Unicode can name SignWriting characters, but the current official model should not be treated as a production replacement for FSW/SWU.",
+      "summary": "Unicode can name SignWriting characters, but the current official model should not be treated as production-preserving text.",
       "image_prompts": {
         "concrete": "Technical overview slide showing official Unicode SignWriting character coverage beside unresolved production compatibility for symbols, written signs, sorting, and tooling",
         "abstract": "Character coverage separated from production compatibility"
       },
       "bullets": [
         "The issue is not whether Unicode contains SignWriting characters",
-        "The issue is whether the official model can carry the production ecosystem",
+        "The issue is whether the official model preserves production text",
         "At present it cannot",
         "The gap includes facial authorship, written signs, text operations, and tooling"
       ],
-      "speech": "The baseline problem is not that Unicode lacks SignWriting characters. The official block is useful as a character repertoire. The problem is that it should not be treated as a compatible production replacement for FSW/SWU or as a complete written-sign model. The strongest concern appears in the facial system, where the official model preserves Unicode facial mark categories rather than production-level writer-selected facial-symbol identity and authored arrangement in the FSW/SWU sense.",
+      "speech": "The baseline problem is not that Unicode lacks SignWriting characters. The official block has Unicode-scoped value as a character repertoire. The problem is that it should not be treated as a production-preserving text model, a compatible production replacement for FSW/SWU, or a complete written-sign model. The strongest concern appears in the facial system, where the official model preserves Unicode facial mark categories rather than selected ISWA 2010 facial symbols and authored arrangement.",
       "notes": "Open with the firmest simple statement. Do not spend time on history here. Establish compatibility as the standard of judgment.",
       "mermaid": "flowchart TD\n  A[Official Unicode SignWriting] --> B[Character block exists]\n  A --> C[Production compatibility?]\n  C --> D[Symbol model]\n  C --> E[Written signs]\n  C --> F[Sorting and tooling]\n  D --> G[Current gap remains]\n  E --> G\n  F --> G\n\n  classDef core fill:#f5f3ff,color:black,stroke:#7c3aed,stroke-width:3px;\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  class A,C core;\n  class B,D,E,F node;\n  class G out;"
     },
@@ -72,11 +72,11 @@
       },
       "bullets": [
         "The official block covers much of the character layer",
-        "That is not the same as preserving production-level facial-symbol identity and authored arrangement",
+        "That is not the same as preserving selected ISWA 2010 facial symbols and authored arrangement",
         "That is not the same as encoding complete written signs",
         "The current gap becomes clearer once those questions are separated"
       ],
-      "speech": "A useful correction is that this is not just a writing-level problem. The current official block can name much of the character inventory at the base, fill, and rotation layer. That is one question. A second question is whether the facial model preserves production-level writer-selected facial-symbol identity and authored arrangement in the FSW/SWU sense, not only Unicode facial mark categories. A third question is whether written signs can be encoded in a compatible practical way. Once those questions are separated, the Unicode gap becomes much easier to describe honestly.",
+      "speech": "A useful correction is that this is not just a writing-level problem. The current official block can name much of the character inventory at the base, fill, and rotation layer. That is one question. A second question is whether the facial model preserves selected ISWA 2010 facial symbols and authored arrangement, not only Unicode facial mark categories. A third question is whether written signs can be encoded in a compatible practical way. Once those questions are separated, the Unicode gap becomes much easier to describe honestly.",
       "notes": "This slide should now carry the main conceptual distinction from the essay.",
       "mermaid": "flowchart TD\n  A[Official Unicode SignWriting] --> B[Naming characters]\n  A --> C[Production facial authorship]\n  A --> D[Encoding written signs]\n  B --> E[Largely advanced]\n  C --> F[Not preserved in FSW/SWU sense]\n  D --> G[Not compatibly solved]\n\n  classDef core fill:#f5f3ff,color:black,stroke:#7c3aed,stroke-width:3px;\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef good fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  classDef risk fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  class A core;\n  class B,C,D node;\n  class E good;\n  class F,G risk;"
     },
@@ -96,7 +96,7 @@
         "There is no closed shared master inventory of final facial combinations",
         "Production-level identity and authored arrangement are not preserved"
       ],
-      "speech": "The facial system makes the deeper break visible. In Formal SignWriting, the writer selects a symbol from the shared production inventory and authors its placement. In the official facial-diacritic model, the writer enters Unicode facial mark categories and the font constructs a rendered face. That distinction matters: the official sequence can preserve mark categories while still failing to preserve production-level writer-selected facial-symbol identity and authored arrangement in the FSW/SWU sense.",
+      "speech": "The facial system makes the deeper break visible. In Formal SignWriting, the writer selects a symbol from the shared production inventory and authors its placement. In the official facial-diacritic model, the writer enters Unicode facial mark categories and the font constructs a rendered face. That distinction matters: the official sequence can preserve mark categories while still failing to preserve selected ISWA 2010 facial symbols and authored arrangement.",
       "notes": "This is the strongest diagnostic slide. Keep it technical and calm.",
       "mermaid": "flowchart LR\n  A[Formal SignWriting writer] --> B[Selects final ISWA symbol]\n  B --> C[Stable production identity]\n\n  D[Official facial model writer] --> E[Writes mark sequence]\n  E --> F[Font constructs face]\n  F --> G[Rendered face]\n  G --> H[Authored arrangement not stored]\n\n  classDef good fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  classDef core fill:#f5f3ff,color:black,stroke:#7c3aed,stroke-width:3px;\n  classDef risk fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  class A,B,D,E,F core;\n  class C good;\n  class G,H risk;"
     },
@@ -135,7 +135,7 @@
         "Review text-operation and symbol-model issues honestly",
         "Only reopen discussion from an accurate technical baseline"
       ],
-      "speech": "Progress does not require instant agreement on every design decision. It begins with accurate acknowledgment. The official Unicode block is useful as a character repertoire, but it is not sufficient for compatible production use. The facial-diacritic model preserves Unicode facial mark categories, but not production-level writer-selected facial-symbol identity and authored facial arrangement in the FSW/SWU sense. Spatial composition remains unresolved. The right next step is not migration pressure. It is to decide whether any renewed discussion is worth the effort, and only proceed from an accurate technical baseline.",
+      "speech": "Progress does not require instant agreement on every design decision. It begins with accurate acknowledgment. The official Unicode block has Unicode-scoped value as a character repertoire, but it is not a production-preserving text model. The facial-diacritic model preserves Unicode facial mark categories, but not selected ISWA 2010 facial symbols and authored facial arrangement. Spatial composition remains unresolved, and the facial-diacritic model is a separate structural break rather than a layout problem alone. The right next step is not migration pressure. It is to decide whether any renewed discussion is worth the effort, and only proceed from an accurate technical baseline.",
       "notes": "End on disciplined next steps, not frustration.",
       "mermaid": "flowchart TD\n  A[Acknowledge current incompatibility] --> B[Acknowledge facial authorship boundary]\n  B --> C[Review collation and spatial issues]\n  C --> D[Decide whether renewed discussion is warranted]\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  class A,B,C,D node;\n  class D out;"
     }

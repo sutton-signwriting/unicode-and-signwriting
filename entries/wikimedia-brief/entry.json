@@ -25,13 +25,13 @@
         "abstract": "Public-platform needs revealing a practical encoding compatibility issue"
       },
       "bullets": [
-        "The official Unicode block is not sufficient by itself",
+        "The official Unicode block is not production-preserving text",
         "Current projects still depend on FSW and SWU",
         "Naming characters is not enough for current project needs",
         "The issue is encoding plus interoperability, not only fonts",
         "That matters for storage, reuse, and maintenance"
       ],
-      "speech": "Wikimedia's starting point should be simple. The Unicode issue around SignWriting is still practical and active. The official Unicode block is useful as a character repertoire, but it is not sufficient by itself for current project needs. Current work still depends on FSW and SWU. Naming characters is not enough for the real storage, reuse, and maintenance needs of Wikimedia projects. The issue is not only fonts. It is also encoding, compatibility, and interoperability across real project workflows.",
+      "speech": "Wikimedia's starting point should be simple. The Unicode issue around SignWriting is still practical and active. The official Unicode block has Unicode-scoped value as a character repertoire, but it is not a production-preserving text model for current project needs. Current work still depends on FSW and SWU. Naming characters is not enough for the real storage, reuse, and maintenance needs of Wikimedia projects. The issue is not only fonts. It is also encoding, compatibility, and interoperability across real project workflows.",
       "notes": "Open collaboratively. This is the shortest honest framing.",
       "mermaid": "flowchart TD\n  A[Wikimedia project need] --> B[Storage]\n  A --> C[Rendering]\n  A --> D[Reuse and sharing]\n  A --> E[Maintenance]\n  B --> F[Current Unicode gap becomes practical]\n  C --> F\n  D --> F\n  E --> F\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  class A,B,C,D,E,F node;"
     },
@@ -70,7 +70,7 @@
         "The facial system shifts part of symbol formation into font behavior",
         "Data storage, comparison, and reuse are involved"
       ],
-      "speech": "The real gap is not only that some fonts are missing. The larger problem is that naming characters is not the same as preserving production-level identity, and the current official model also does not provide a compatible written-sign solution. In the facial system, the official model preserves Unicode facial mark categories rather than production-level writer-selected facial-symbol identity and authored arrangement in the FSW/SWU sense. This is why the problem matters to Wikimedia as infrastructure rather than only as display.",
+      "speech": "The real gap is not only that some fonts are missing. The larger problem is that naming characters is not the same as preserving production-level identity, and the current official model also does not provide a compatible written-sign solution. In the facial system, the official model preserves Unicode facial mark categories rather than selected ISWA 2010 facial symbols and authored arrangement. This is why the problem matters to Wikimedia as infrastructure rather than only as display.",
       "notes": "This is the core explanatory slide.",
       "mermaid": "flowchart TD\n  A[Official Unicode model] --> B[Rendering questions]\n  A --> C[Written-sign compatibility]\n  A --> D[Production facial authorship]\n  C --> E[Storage and reuse impact]\n  D --> E\n  B --> E\n\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#fefce8,color:black,stroke:#ca8a04,stroke-width:2px;\n  class A,B,C,D node;\n  class E out;"
     },

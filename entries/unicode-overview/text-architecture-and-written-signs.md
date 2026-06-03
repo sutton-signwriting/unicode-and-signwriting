@@ -61,7 +61,7 @@ The primary encoding question is definitional:
 
 For SignWriting, that means the encoding must preserve not only symbol identity, but also authored spatial relation inside the signbox.
 
-FSW and SWU satisfy that definitional need for the Sutton production ecosystem because coordinates are in the text string.
+FSW and SWU satisfy that definitional need for the Sutton SignWriting production ecosystem because coordinates are in the text string.
 
 They are not external metadata.
 

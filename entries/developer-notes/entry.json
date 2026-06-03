@@ -36,9 +36,9 @@
         "FSW for canonical storage and processing",
         "SWU for Unicode-oriented interchange and inspection",
         "ISWA 2010 as the symbol reference layer",
-        "The official Unicode model is not a drop-in replacement"
+        "The official Unicode model is not the production basis"
       ],
-      "speech": "The implementation baseline is simple. Use FSW as canonical production text. Use SWU when a Unicode-oriented isomorphic form is useful for display, interchange, or downstream workflows. Use ISWA 2010 as the symbol reference layer. This keeps canonical text, production-level symbol identity, and Unicode-oriented interchange in the right relationship. Do not assume the official Unicode SignWriting model can replace the current stack without redesign.",
+      "speech": "The implementation baseline is simple. Use FSW as canonical production text. Use SWU when a Unicode-oriented isomorphic form is useful for display, interchange, or downstream workflows. Use ISWA 2010 as the symbol reference layer. This keeps canonical text, production-level symbol identity, and Unicode-oriented interchange in the right relationship. Do not use the official Unicode SignWriting model as the production basis for Sutton SignWriting.",
       "notes": "This is the main recommendation slide. Keep it crisp.",
       "mermaid": "flowchart TD\n  A[Formal SignWriting model] --> B[FSW canonical production text]\n  A --> C[SWU Unicode-oriented form]\n  A --> D[ISWA 2010 symbol reference]\n  B --> E[Storage, parsing, search]\n  C --> F[Inspection and interchange]\n  D --> G[Shared symbol identity]\n\n  classDef core fill:#f5f3ff,color:black,stroke:#7c3aed,stroke-width:3px;\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  class A,B,C,D core;\n  class E,F,G out;"
     },
@@ -77,7 +77,7 @@
         "Facial composition shows that fonts can mediate symbol identity",
         "Storage and search need stable models"
       ],
-      "speech": "It is tempting to frame the Unicode problem as a rendering problem because rendering is the most visible failure point. But developers need more than visible output, and they need more than named characters. They need stable production-level symbol identity, predictable storage, reliable interchange, searchability, and sorting. The facial model makes the risk obvious: it preserves Unicode facial mark categories, but not production-level writer-selected facial-symbol identity and authored arrangement in the FSW/SWU sense.",
+      "speech": "It is tempting to frame the Unicode problem as a rendering problem because rendering is the most visible failure point. But developers need more than visible output, and they need more than named characters. They need stable production-level symbol identity, predictable storage, reliable interchange, searchability, and sorting. The facial model makes the risk obvious: it preserves Unicode facial mark categories, but not selected ISWA 2010 facial symbols and authored arrangement.",
       "notes": "Use this to stop the conversation from collapsing into font talk.",
       "mermaid": "flowchart LR\n  A[Encoding choice] --> B[Storage]\n  A --> C[Search and sorting]\n  A --> D[Rendering]\n  A --> E[Interoperability]\n  D --> F[Visible output]\n  B --> G[Stable data]\n  C --> G\n  E --> G\n\n  classDef core fill:#f5f3ff,color:black,stroke:#7c3aed,stroke-width:3px;\n  classDef node fill:#eff6ff,color:black,stroke:#2563eb,stroke-width:2px;\n  classDef out fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  class A,G core;\n  class B,C,D,E,F node;"
     },
@@ -91,14 +91,14 @@
         "abstract": "A cautious migration gate based on compatibility tests"
       },
       "bullets": [
-        "Are production-level writer-selected symbols preserved across the full system?",
+        "Are selected Sutton SignWriting symbols preserved across the full system?",
         "Are authored facial arrangements preserved?",
         "Can full signs be represented without loss?",
         "Can sorting be preserved?",
         "Can fonts and renderers still work?",
         "Can round-tripping be guaranteed?"
       ],
-      "speech": "If someone asks whether to migrate existing Sutton SignWriting data to the official Unicode model, the safe answer is not yet. Migration should be justified, not assumed. The burden of proof is on the migration path. Are production-level writer-selected symbols preserved across the full system? Are production-level facial-symbol identity and authored facial arrangement preserved in the FSW/SWU sense? Can full signs be represented without loss? Can sorting stay stable? Can current renderers and tools still work? Can round-tripping be guaranteed? If the answers are not clearly yes, migration is not yet justified.",
+      "speech": "If someone asks whether to migrate existing Sutton SignWriting data to the official Unicode model, the safe answer is not yet. Migration should be justified, not assumed. The burden of proof is on the migration path. Are selected Sutton SignWriting symbols preserved across the full system? Are selected ISWA 2010 facial symbols and authored facial arrangement preserved? Can full signs be represented without loss? Can sorting stay stable? Can current renderers and tools still work? Can round-tripping be guaranteed? If the answers are not clearly yes, migration is not yet justified.",
       "notes": "This slide is practical and cautionary.",
       "mermaid": "flowchart TD\n  A[Proposed migration] --> B{Lossless full-sign representation?}\n  B -->|No| C[Do not migrate]\n  B -->|Yes| D{Sorting preserved?}\n  D -->|No| C\n  D -->|Yes| E{Round-trip stable?}\n  E -->|No| C\n  E -->|Yes| F[Migration may be justified]\n\n  classDef risk fill:#fef2f2,color:black,stroke:#dc2626,stroke-width:2px;\n  classDef ok fill:#f0fdf4,color:black,stroke:#16a34a,stroke-width:2px;\n  class A,B,D,E node;\n  class C risk;\n  class F ok;"
     },

@@ -28,14 +28,14 @@
         "Developer guidance",
         "Production-boundary notes"
       ],
-      "speech": "Unicode history and current production practice need to be read together. The record includes Unicode proposals and approvals, but the compatibility question depends on whether the official Unicode SignWriting block should be treated as a compatible production replacement for FSW/SWU or as a complete written-sign model.",
+      "speech": "Unicode history and current production practice need to be read together. The record includes Unicode proposals and approvals, but the compatibility question depends on whether the official Unicode SignWriting block should be treated as a production-preserving text model, a compatible production replacement for FSW/SWU, or a complete written-sign model.",
       "notes": "Keep it documentary and technical."
     },
     {
       "id": "central-distinction",
       "title": "Central Distinction",
       "kicker": "2",
-      "summary": "Official Unicode encoding and the production text models that currently make SignWriting usable are related but not identical.",
+      "summary": "Official Unicode encoding and production-preserving Sutton SignWriting text models are related but not identical.",
       "image_prompts": {
         "concrete": "Comparison slide showing official Unicode SignWriting on one side and FSW/SWU production encodings on the other, with compatibility questions between them",
         "abstract": "Two encoding paths connected by compatibility bridges"
@@ -53,25 +53,26 @@
       "id": "reading-path",
       "title": "Reading Path",
       "kicker": "3",
-      "summary": "Readers can move from the overview into chronology, Unicode overview, the facial orthography boundary, developer notes, and Wikimedia context.",
+      "summary": "Readers can move from the overview into the production warning, chronology, Unicode overview, facial orthography boundary, developer notes, and Wikimedia context.",
       "image_prompts": {
-        "concrete": "Unicode series reading path slide moving from overview to chronology, Unicode overview, facial orthography boundary, developer notes, and Wikimedia brief",
+        "concrete": "Unicode series reading path slide moving from overview to production warning, chronology, Unicode overview, facial orthography boundary, developer notes, and Wikimedia brief",
         "abstract": "A standards reading path through chronology, compatibility, and implementation"
       },
       "bullets": [
+        "Unicode SignWriting Production Warning",
         "Chronology and Record",
         "Unicode Overview",
         "Facial Orthography Boundary",
         "Developer Notes and Wikimedia Brief"
       ],
-      "speech": "The clearest path starts with the overview and chronology. Then readers can move into the Unicode overview, facial orthography boundary, developer notes, and Wikimedia brief depending on whether they need history, compatibility analysis, implementation guidance, or public-platform context.",
+      "speech": "The clearest path starts with the overview and the Unicode SignWriting Production Warning. Then readers can move into chronology, the Unicode overview, facial orthography boundary, developer notes, and Wikimedia brief depending on whether they need history, compatibility analysis, implementation guidance, or public-platform context.",
       "notes": "Keep the reading path concise."
     },
     {
       "id": "scope-boundary",
       "title": "Scope Boundary",
       "kicker": "4",
-      "summary": "The series critiques compatibility limits in the current official SignWriting model; it does not argue against Unicode or standards work.",
+      "summary": "The series critiques production-compatibility limits in the current official SignWriting model; it does not argue against Unicode or standards work.",
       "image_prompts": {
         "concrete": "Standards boundary slide separating Unicode as an important standards system from specific SignWriting compatibility gaps in production-level identity, written signs, sorting, and migration",
         "abstract": "A precise technical critique held inside a production-compatibility boundary"

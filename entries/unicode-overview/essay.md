@@ -2,19 +2,19 @@
 
 **Current position and why the issue keeps returning**
 
-The official Unicode SignWriting block is useful as a character repertoire, but it should not be treated as a compatible production replacement for FSW/SWU or as a complete written-sign model.
+The official Unicode SignWriting block has Unicode-scoped value as a character repertoire, but it should not be treated as a production-preserving text model, a compatible production replacement for FSW/SWU, or a complete written-sign model.
 
 That is not because Unicode has no SignWriting symbols.
 
-It is because the official facial model preserves Unicode facial mark categories, but not production-level writer-selected facial-symbol identity and authored facial arrangement in the FSW/SWU sense. The official model also does not support some ordinary production text operations cleanly and does not provide a compatible model for complete written signs.
+It is because the official facial model preserves Unicode facial mark categories, but not selected ISWA 2010 facial symbols and authored facial arrangement. The official model also does not support some ordinary production text operations cleanly and does not provide a compatible model for complete written signs.
 
 ## Current position
 
 The Sutton SignWriting Resources currently hold that:
 
-- the official Unicode SignWriting block, introduced in Unicode 8.0.0 and maintained in later Unicode versions, is not currently a compatible production replacement for the established FSW/SWU Sutton SignWriting production ecosystem
-- the official facial model preserves Unicode facial mark categories, but not production-level writer-selected facial-symbol identity and authored facial arrangement in the FSW/SWU sense
-- the main unresolved issue is spatial composition
+- the official Unicode SignWriting block, introduced in Unicode 8.0.0 and maintained in later Unicode versions, is not currently a production-preserving text model or compatible production replacement for the established FSW/SWU Sutton SignWriting production ecosystem
+- the official facial model preserves Unicode facial mark categories, but not selected ISWA 2010 facial symbols and authored facial arrangement
+- spatial composition remains unresolved, and the facial-diacritic model is a separate structural break rather than a layout problem alone
 - inherent first fill and first rotation values complicate search, replacement, counting, sorting, collation, and migration
 - production-ready tools, fonts, and datasets cannot simply be moved to the official encoding without loss or redesign
 - FSW remains the main production encoding in practice
@@ -30,9 +30,9 @@ The issue keeps returning because many people reasonably assume that once Unicod
 
 That assumption does not hold here.
 
-Unicode encoded a SignWriting block, but the official model should not be treated as a complete written-sign model or as a lossless replacement for FSW/SWU.
+Unicode encoded a SignWriting block, but the official model should not be treated as a production-preserving written-sign model or as a lossless replacement for FSW/SWU.
 
-There is a difference between naming characters, preserving production-level writer-selected symbols, and encoding complete written signs.
+There is a difference between naming characters, preserving selected Sutton SignWriting symbols, and encoding complete written signs.
 
 The Unicode Core Specification itself shows the tension. It describes Sutton SignWriting symbols as arranged in two-dimensional layout to form signs, then states that spatial arrangement is an essential part of the writing system while treating that arrangement as a higher-level protocol beyond the scope of the Unicode Standard. That makes the production gap internal to the official model's documented scope, not merely an external objection from current tooling.
 
@@ -56,12 +56,12 @@ The official Unicode SignWriting block covers:
 
 That means it can name much of the symbol inventory at the base/fill/rotation character layer.
 
-It does not mean that production-level facial-symbol identity and authored facial arrangement are preserved in the FSW/SWU sense.
+It does not mean that selected ISWA 2010 facial symbols and authored facial arrangement are preserved.
 
 It does not, by itself, provide a compatible solution for:
 
-- production-level writer-selected facial-symbol identity and authored arrangement
-- full written sign representation
+- selected ISWA 2010 facial symbols and authored arrangement
+- production-preserving full written sign representation
 - stable spatial composition
 - direct compatibility with the existing Sutton SignWriting datasets
 - clean migration of production fonts and tools
@@ -69,13 +69,13 @@ It does not, by itself, provide a compatible solution for:
 
 In the facial area, the official diacritic model introduces a deeper break.
 
-Instead of preserving the writer's production-level facial-symbol selection and authored placement, the model asks the writer for a sequence of Unicode facial mark categories that the font then interprets and arranges into a rendered face.
+Instead of preserving the Sutton SignWriting facial symbols the writer selected and their authored placement, the model asks the writer for a sequence of Unicode facial mark categories that the font then interprets and arranges into a rendered face.
 
 That pushes part of symbol formation into font behavior and designer interpretation.
 
 It also means that the official model does not merely fall short at the written-sign level.
 
-It therefore changes the text identity being preserved: the stored text preserves the mark sequence, not the production-level facial symbol and authored arrangement.
+It therefore changes the text identity being preserved: the stored text preserves the mark sequence, not the selected Sutton SignWriting facial symbols and authored arrangement.
 
 It also leaves a more basic question unresolved:
 
@@ -87,7 +87,7 @@ That question is where the gap between symbol encoding and writing support becom
 
 The difference can be stated simply:
 
-- **official Unicode SignWriting** names much of the symbol block at the character layer, but does not preserve production-level facial-symbol identity and authored facial arrangement in the FSW/SWU sense, and complicates some ordinary text operations
+- **official Unicode SignWriting** names much of the symbol block at the character layer, but does not preserve selected ISWA 2010 facial symbols and authored facial arrangement, and complicates some ordinary text operations
 - **Formal SignWriting** names and structures written signs
 
 The writing system in practice needs more than a symbol block.
@@ -154,7 +154,7 @@ That is part of why later public visibility increased confusion instead of reduc
 
 This is also why the question cannot be reduced to "Unicode solved symbols and only writing remains."
 
-At least in the facial system, the official model preserves Unicode facial mark categories rather than the production-level facial-symbol identity and authored arrangement used by Formal SignWriting.
+At least in the facial system, the official model preserves Unicode facial mark categories rather than the selected Sutton SignWriting facial symbols and authored arrangement used by Formal SignWriting.
 
 ## The scale of the practical ecosystem
 
@@ -181,9 +181,9 @@ Progress with Unicode would not require immediate agreement on everything.
 
 It would require:
 
-- acknowledgment that the official Unicode SignWriting block is useful as a character repertoire but is not sufficient for compatible production use
-- acknowledgment that the facial-diacritic model preserves Unicode facial mark categories, but not production-level writer-selected facial-symbol identity and authored facial arrangement in the FSW/SWU sense
-- acknowledgment that spatial composition remains unresolved
+- acknowledgment that the official Unicode SignWriting block has Unicode-scoped value as a character repertoire but is not a production-preserving text model
+- acknowledgment that the facial-diacritic model preserves Unicode facial mark categories, but not selected ISWA 2010 facial symbols and authored facial arrangement
+- acknowledgment that spatial composition remains unresolved and that the facial-diacritic model is a separate structural break rather than a layout problem alone
 - honest technical discussion of collation, compatibility, and migration
 - a concrete path for renewed discussion only if meaningful technical and institutional interest actually exists
 

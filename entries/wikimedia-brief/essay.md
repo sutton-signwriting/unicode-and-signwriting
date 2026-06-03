@@ -6,7 +6,7 @@ Status note: This is a Sutton SignWriting project briefing for Wikimedia-facing 
 
 ## Short answer
 
-The official Unicode SignWriting block is useful as a character repertoire, but it is not sufficient by itself for real-world Sutton SignWriting production use.
+The official Unicode SignWriting block has Unicode-scoped value as a character repertoire, but it is not a production-preserving text model for real-world Sutton SignWriting use.
 
 Wikimedia projects that want to host or work with SignWriting therefore still need practical, stable solutions for text storage, structured sign representation, display, search, and compatibility with existing datasets.
 
@@ -20,7 +20,7 @@ You may see:
 
 Unicode includes an official SignWriting block introduced in Unicode 8.0.0.
 
-That block names many characters, but it does not yet deliver a complete, compatible solution for production-level facial authorship and plane-based written signs.
+That block names many Unicode characters, but it does not deliver a production-preserving text model for production-level facial authorship and plane-based written signs.
 
 ## The real gap
 
@@ -32,7 +32,7 @@ The gap is larger than missing fonts or rendering. The official Unicode SignWrit
 - spatial composition (the plane-based nature of the writing system)
 - seamless compatibility with current Sutton SignWriting datasets and tooling
 
-In the facial system specifically, the official model preserves Unicode facial mark categories, but not production-level writer-selected facial-symbol identity and authored facial arrangement in the FSW/SWU sense. The font interprets and arranges the mark sequence into a rendered face. That affects not just display but also how data is stored, compared, and reused.
+In the facial system specifically, the official model preserves Unicode facial mark categories, but not selected ISWA 2010 facial symbols and authored facial arrangement. The font interprets and arranges the mark sequence into a rendered face. That affects not just display but also how data is stored, compared, and reused.
 
 ## What is used in practice today
 
@@ -91,7 +91,7 @@ A realistic public posture would:
 
 - start from the actual production ecosystem rather than the assumption that the Unicode block already solves the problem
 - acknowledge that FSW and SWU remain the practical baseline where SignWriting is already in use
-- avoid claims that the current Unicode block already provides a complete compatible solution
+- avoid claims that the current Unicode block already provides a production-preserving text model
 
 ## Good next step
 
