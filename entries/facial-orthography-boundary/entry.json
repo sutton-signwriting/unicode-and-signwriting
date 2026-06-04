@@ -155,10 +155,11 @@
     }
   ],
   "publication": {
-    "status": "working-briefing",
+    "status": "artifact-doi-planned",
+    "doi": "10.5281/zenodo.20548442",
     "doi_candidate": true,
     "repo_candidate": true,
-    "zenodo_record": "possible",
+    "zenodo_record": "planned",
     "citation_role": "reference-briefing"
   }
 }
