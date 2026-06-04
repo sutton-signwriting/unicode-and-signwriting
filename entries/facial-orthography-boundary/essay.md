@@ -28,9 +28,7 @@ That model is not a partial version of Sutton SignWriting production facial writ
 
 This note focuses on facial writing because the facial-diacritic model is the most structurally irreparable failure point. Other compatibility problems exist, including spatial composition, sorting, collation, dataset compatibility, and tooling, and they are addressed in companion documents. Facial writing is the decisive test case because the official sequence does not store authored facial arrangement in the first place.
 
-Because complete Sutton SignWriting production text includes facial writing, a model that cannot preserve facial writing cannot serve as the basis for complete production text.
-
-The general problem is incomplete production preservation. The facial-writing problem is sharper: official Unicode does not merely omit authored facial arrangement; it replaces production facial writing with a head-plus-mark abstraction.
+Because complete Sutton SignWriting production text includes facial writing, a model that cannot preserve facial writing cannot serve as the basis for complete production text. The general problem is incomplete production preservation; the facial-writing problem is sharper because official Unicode does not merely omit authored facial arrangement, but replaces production facial writing with a head-plus-mark abstraction.
 
 ## Core Argument
 
@@ -60,19 +58,21 @@ For facial writing, that means preserving:
 
 Preserving authored facial arrangement does not mean declaring every facial placement difference to be canonical spelling in advance. It means keeping the written evidence available so communities can later compare, teach, normalize, reject, or standardize those forms as part of their own orthographic development.
 
-ISWA 2010 remains the Sutton SignWriting production symbol repertoire. FSW/SWU preserve selected ISWA 2010 symbols and authored spatial relations in the working Sutton SignWriting ecosystem. Other production models are possible, but only if they preserve the same necessary data: selected symbols, sign boundaries, authored spatial relations, and authored facial arrangement.
+ISWA 2010 remains the Sutton SignWriting production symbol repertoire. FSW/SWU preserve selected ISWA 2010 symbols and authored spatial relations in the working Sutton SignWriting ecosystem. [ISWA 2010 Alphabet Viewer; FSW and SWU] Other production models are possible, but only if they preserve the same necessary data: selected symbols, sign boundaries, authored spatial relations, and authored facial arrangement.
 
 Production compatibility is not a status claim. It is a preservation claim.
+
+That preservation claim applies both to community orthography and to downstream technical systems.
 
 This requirement becomes more important as SignWriting is used in AI, machine-learning, corpus, and dataset workflows. Those fields depend on reliable text interchange: stable units, preservable structure, searchable forms, citable examples, and reproducible transformations. If the complete written sign is not preserved as a textual unit, downstream systems cannot reliably learn from, compare, cite, transform, or extend Sutton SignWriting data.
 
 ## What Unicode Encoded
 
-The official Unicode SignWriting block names Unicode characters, assigns code points, and defines a Unicode-specific model for representing some SignWriting material. That is a real standards artifact.
+The official Unicode SignWriting block names Unicode characters, assigns code points, and defines a Unicode-specific model for representing some SignWriting material. [Unicode 17, ch. 21] That is a real standards artifact.
 
 That status should not be inflated. Official Unicode SignWriting code points can support Unicode-scoped documentation, testing, and limited Unicode-model interchange. That is not the same as being useful for working with Sutton SignWriting production text.
 
-The Core Specification describes SignWriting symbols as arranged in two-dimensional layout to form signs and treats that arrangement as a higher-level protocol outside Unicode. The L2/12-321 / N4342 proposal also states that spatial organization is spelling and that the writer decides the symbols and their placement.
+The Core Specification describes SignWriting symbols as arranged in two-dimensional layout to form signs and treats that arrangement as a higher-level protocol outside Unicode. The L2/12-321 / N4342 proposal also states that spatial organization is spelling and that the writer decides the symbols and their placement. [Unicode 17, ch. 21; L2/12-321 / N4342]
 
 For facial writing, however, the resulting official model is not only a model that leaves placement to a higher-level protocol. It encodes a facial abstraction:
 
@@ -80,13 +80,13 @@ For facial writing, however, the resulting official model is not only a model th
 HEAD + facial marks
 ```
 
-The proposal describes `U+1D9FF SIGNWRITING HEAD`, combining face characters, and fill modifiers that subcategorize those marks. It says diacritics may occur after the head with eye and mouth diacritics combined in the sequence.
+The proposal describes `U+1D9FF SIGNWRITING HEAD`, combining face characters, and fill modifiers that subcategorize those marks. It says diacritics may occur after the head with eye and mouth diacritics combined in the sequence. [L2/12-321 / N4342]
 
 That is a categorical sequence model. It contains no field for authored facial arrangement, whether by coordinates, relative placement, or another production-preserving representation. Sequence order may identify which marks occur after the head. It does not preserve the writer's spatial arrangement of the written face.
 
 The objection here is not to Base+Fill+Rotation triplet mapping for individual Sutton SignWriting symbols in general. It is to the official facial head-plus-diacritic abstraction, which does not preserve authored facial arrangement as production text.
 
-The same proposal treats facial marks without a visible head as an exceptional invisible-head case and says that rendering face modifiers without a face is "never used in actual sign languages." That is not a neutral preservation rule. It is an orthographic assumption about what facial writing will need to express.
+The same proposal treats facial marks without a visible head as an exceptional invisible-head case and says that rendering face modifiers without a face is "never used in actual sign languages." [L2/12-321 / N4342] That is not a neutral preservation rule. It is an orthographic assumption about what facial writing will need to express.
 
 As a production basis, that kind of assumption would not merely describe an implementation detail. It would narrow the expressive space before signing communities have had the written evidence needed to decide their own facial conventions.
 
@@ -106,39 +106,41 @@ A higher-level protocol may be higher-level for Unicode. It is not higher-level 
 
 That is the plain-text issue. The storage issue is different: a spatial writing system can be serialized without becoming a linear script.
 
-A spatial writing system can be serialized as text if the serialization preserves the spatial information. FSW/SWU demonstrate that a linear string can preserve selected ISWA 2010 symbols, sign boundaries, coordinates, and authored spatial relations.
+A spatial writing system can be serialized as text if the serialization preserves the spatial information. FSW/SWU demonstrate that a linear string can preserve selected ISWA 2010 symbols, sign boundaries, coordinates, and authored spatial relations. [FSW and SWU; Formal SignWriting series]
 
-The problem with official Unicode SignWriting is therefore not that it is serialized. The problem is that its serialization does not preserve the Sutton SignWriting production object. For facial writing, `HEAD + facial marks` serializes a renderer-mediated abstraction rather than the writer-selected facial symbols and authored facial arrangement.
+The production test is therefore not whether Sutton SignWriting can be serialized. It can. The test is whether the serialization preserves the Sutton SignWriting production object: the complete signbox-level written sign.
 
 ## The Preservation Mismatch
 
-The preservation mismatch is this: the Unicode record acknowledges that Sutton SignWriting spatial organization is essential to the writing system, and the proposal record states that spatial organization is spelling. Yet the official Unicode artifact that resulted does not preserve signbox spatial relation as plain text, instead assigning it to a higher-level protocol.
+Even if the official Unicode facial model could be made to work, a second production boundary would remain. Under the signbox-level test established above, official Unicode SignWriting does not preserve the complete written sign as text because it does not preserve signbox spatial relations.
 
-That is the general preservation mismatch. The facial-diacritic model is the sharper case because it replaces authored facial composition with `HEAD + facial marks`.
+The Unicode record confirms why this matters: the Core Specification describes SignWriting symbols as arranged in two-dimensional layout to form signs and treats that arrangement as a higher-level protocol outside Unicode. The proposal record also states that spatial organization is spelling and that the writer decides the symbols and their placement. [Unicode 17, ch. 21; L2/12-321 / N4342] Yet the official Unicode artifact that resulted does not preserve signbox spatial relation as plain text, instead assigning it to a higher-level protocol.
 
-If official Unicode SignWriting is defended as a notation-style encoding rather than as a production writing-system text model, that defense confirms the boundary rather than weakening it. Sutton SignWriting is used as a writing system for signed languages. That categorization is also visible in FSW/SWU-based corpus, dataset, machine-translation, and language-modeling workflows, where complete written signs are treated as language text units for modeling, alignment, search, and generation rather than as notation-only graphics. A notation-scoped Unicode artifact may still be useful for Unicode documentation, standards history, or limited display experiments, but it should not be treated as production text support for Sutton SignWriting. If the official encoding is presented as writing-system support, then it must be evaluated by whether it preserves the complete written sign.
+That mismatch is not repaired by calling SignWriting notation. The label does not move signbox spatial relation outside the written unit. If those relations are assigned to a higher-level protocol, that protocol becomes the place where production preservation would have to occur.
 
-That exclusion is not equivalent to excluding font size, color, page margins, typographic style, or surrounding document layout. If spatial relation is spelling, then excluding spatial relation excludes part of the written form.
+Official Unicode SignWriting can therefore be a real Unicode artifact without being a Sutton SignWriting production text model.
 
-Unicode does not need to encode a complete Sutton SignWriting sign as a single character. A complete written sign may be represented by a sequence or by another production text model. But a production text model for Sutton SignWriting must preserve the complete written-sign text element: selected symbols, sign boundary, authored spatial relations, and authored facial arrangement.
+Readers may encounter a MusicXML analogy in standards discussions: Unicode music symbols are not a production score format, and full scores use higher-level protocols. [L2/17-255; L2/17-282] That analogy helps describe one possible Unicode-scoped use, but it does not resolve the SignWriting problem.
 
-Official Unicode SignWriting does not do that. It encodes a Unicode-scoped repertoire and composition model while excluding or abstracting structure needed to preserve the written sign as production text. That is why official Unicode SignWriting can be a real Unicode artifact without being a Sutton SignWriting production text model.
+The disputed structure is not layout around the written unit; it is spatial relation inside the written unit. MusicXML can use Unicode music symbols inside a separate production score format because MusicXML, not the Unicode music symbols alone, preserves the production score object. Sutton SignWriting production work needs a text model that preserves complete written signs for ordinary text uses: authoring, citation, search, publication, archiving, datasets, and AI workflows.
 
-Readers may encounter a MusicXML analogy in standards discussions: Unicode music symbols are not a production score format, and full scores use higher-level protocols. That analogy confirms the boundary rather than resolving it. If Unicode music symbols are not a production score format, then official Unicode SignWriting symbols likewise should not be treated as a production Sutton SignWriting text model unless the model preserves the complete written sign. For Sutton SignWriting, the signbox is not surrounding document layout; it is a bounded written-language text element internal to the writing system. Excluding signbox spatial relation therefore excludes part of the written-language text element itself.
+That is the second boundary: even apart from the facial-diacritic model, official Unicode SignWriting does not preserve the complete written sign as production text.
 
 ## Why Authored Coordinates Are Not Font Coordinates
 
-A common technical objection is that putting coordinates in text makes font behavior unreliable. That objection applies the wrong model to Sutton SignWriting.
+A common technical objection is that putting coordinates in text makes font behavior unreliable. [L2/17-255; L2/17-282] That objection applies the wrong model to Sutton SignWriting.
 
 In many linear scripts, including ordinary Latin text, that concern is understandable: many coordinates really are glyph-positioning instructions supplied by the font.
 
 The problem is that the objection transfers that model to Sutton SignWriting. It assumes that coordinates are merely glyph-positioning instructions. That assumption is false for Sutton SignWriting.
 
-All shaped text involves positioning. In many scripts, many positioning decisions are supplied by the font: mark attachment, kerning, contextual placement, and other glyph-positioning behavior. Those coordinates express script conventions and typographic rules. The writer of ordinary Latin text does not author the exact position of an acute accent over a letter. The text stores the characters, and the font supplies the conventional placement.
+All shaped text involves positioning. In many scripts, many positioning decisions are supplied by the font: mark attachment, kerning, contextual placement, and other glyph-positioning behavior. [OpenType GPOS] Those coordinates express script conventions and typographic rules. The writer of ordinary Latin text does not author the exact position of an acute accent over a letter. The text stores the characters, and the font supplies the conventional placement.
 
 Sutton SignWriting is different. Signbox coordinates are not merely typographic placement rules. They record the writer's authored spatial composition inside the written sign. Different signs may use the same symbols in different authored positions. Those positions are not recoverable from the symbol sequence alone.
 
 So the question is not whether coordinates are involved. Coordinates are involved in both cases. The question is what the coordinates represent and where they belong. For many linear scripts, many coordinates represent conventional glyph positioning and belong in the font. For Sutton SignWriting, signbox coordinates represent authored written content and must be preserved by the production text model and serialization.
+
+For Sutton SignWriting, the question is not whether coordinates belong in the system. They do, in both approaches. The question is whether they belong in the production text model, where they preserve what the writer authored, or in the font, where they express what the renderer constructs.
 
 The requirement is not that coordinates be encoded as ordinary Unicode characters. The requirement is that coordinates, or equivalent authored spatial relations, be preserved in the production text model and serialization.
 
@@ -168,37 +170,33 @@ For simple or conventional faces, a font may produce a plausible result from a c
 
 ## Why A Higher-Level Protocol Does Not Rescue The Official Block
 
-This framing appears regularly in standards and implementation discussions.
+The common rescue argument is that Unicode can provide the symbol layer while a higher-level protocol supplies coordinates or signbox structure.
 
-A higher-level production model may preserve Sutton SignWriting. That does not rescue the official Unicode encoding as a production basis.
+That argument fails inside the official facial model itself. For facial writing, the official sequence does not give the higher-level protocol independently placeable Sutton SignWriting facial symbols. It gives the protocol a head-mediated mark sequence: `HEAD + facial marks`.
 
-If a production model preserves ISWA 2010 identity, selected symbols, authored coordinates, sign boundaries, and authored facial arrangement, then that production model is the basis. Any use of Unicode code points for comparison, diagnostics, display experiments, or historical discussion is supporting rather than preservational. Production compatibility comes from the production model, not from the official Unicode facial sequence.
-
-Nor does the official encoding become a production basis by being treated as a symbol layer completed elsewhere. A production basis is the model that preserves the complete written-sign text element for interchange. If a higher-level protocol supplies sign boundaries, authored coordinates, and authored facial arrangement, then that protocol is the production basis. The Unicode characters may be used as supporting identifiers inside that model, but production compatibility comes from the model that preserves the written sign, not from the official encoding alone.
-
-The common escape route is to say that Unicode can be the symbol layer and a higher-level protocol can add coordinates. That framing fails for facial writing.
-
-First, the official Unicode model treats facial marks as nonspacing marks attached to a head. That imports an orthographic decision: facial marks are not independently placeable production objects, but must be mediated by a head. Treating those marks as independently coordinate-bearing production symbols would be a workaround around the official model, not production preservation supplied by it. SignWriting communities have not made a universal decision that facial writing must be head-mediated, and different communities may not make the same decision.
+First, the official Unicode model treats facial marks as nonspacing marks attached to a head. [L2/12-321 / N4342; Unicode 17, ch. 21] That imports an orthographic decision: facial marks are not independently placeable production objects, but must be mediated by a head. Treating those marks as independently coordinate-bearing production symbols would be a workaround around the official model, not production preservation supplied by it. SignWriting communities have not made a universal decision that facial writing must be head-mediated, and different communities may not make the same decision.
 
 Second, signbox coordinates cannot reach inside a font-constructed face. If a facial mark is rendered as part of a constructed head, placing the whole sequence in the signbox does not let the writer author the mark's position within facial space. The mark's internal placement remains controlled by the font or renderer.
 
-Third, coordinates cannot recover production data that the sequence never stored. If the official sequence preserved only `HEAD + facial marks`, then adding coordinates around that sequence does not restore selected Sutton SignWriting facial symbols or authored facial arrangement. Diagnostic mapping is not production citation.
+Third, coordinates cannot recover production data that the sequence never stored. If the official sequence preserved only `HEAD + facial marks`, then adding coordinates around that sequence does not restore selected Sutton SignWriting facial symbols or authored facial arrangement.
 
-For facial writing, Unicode facial marks should not be assumed to be valid production symbol identifiers unless they correspond to independently preservable Sutton SignWriting production symbols. The official model does not establish that correspondence.
+For facial writing, Unicode facial marks therefore cannot simply be treated as valid production symbol identifiers. The official model does not establish them as independently preservable Sutton SignWriting production symbols. It establishes them as marks in a head-mediated rendering model.
+
+A higher-level protocol can follow that model, in which case internal facial arrangement remains unstored. Or it can treat the marks as independently placeable production objects, in which case it has departed from the official model it was supposed to rescue. Diagnostic mapping may be useful for analysis, comparison, or experimentation, but it is not production citation.
 
 ## Why This Is Not A Font Problem
 
 All visible text depends on rendering. That is not the problem.
 
-The problem is what the stored text gives the renderer.
+The problem is what the stored text preserves before rendering begins.
 
 A better font can improve the appearance of official Unicode SignWriting. It can make simple or conventional faces render plausibly. It may even handle many complex sequences better than current fonts.
 
-That still does not make the official facial sequence production-preserving. The stored sequence gives the font `HEAD + facial marks`. It does not give the font the Sutton SignWriting facial symbols the writer selected or their authored placement in facial space.
+But a font can only render from the structure it receives. The official facial sequence gives the font `HEAD + facial marks`. It does not give the font the Sutton SignWriting facial symbols the writer selected, nor their authored placement in facial space.
 
-For complex faces, the font or renderer must decide internal visual construction: ordering, attachment, hierarchy, collision behavior, and normal arrangements. Editors, search systems, normalizers, and corpus pipelines must then decide equivalence, citation, and what combinations count as the same written face. Those decisions may be well engineered, but they are still downstream decisions made after the text has already omitted the authored arrangement.
+For complex faces, the font or renderer must therefore supply internal visual construction: ordering, attachment, hierarchy, collision behavior, and normal arrangements. Editors, search systems, normalizers, and corpus pipelines must then derive equivalence, citation, and identity rules from those constructed results. Those decisions may be consistent and well engineered, but they are still downstream decisions made after the text has already omitted the authored facial arrangement.
 
-A deterministic renderer does not solve that problem if the determinism comes from renderer rules rather than preserved authored facial composition.
+A deterministic renderer does not solve that problem. It only makes the replacement predictable. If determinism comes from renderer rules rather than preserved authored facial composition, then the system has standardized a reconstruction, not preserved the writing.
 
 A better font can draw a better result from the official sequence. It cannot turn an unstored authored facial composition into stored Sutton SignWriting production text.
 
@@ -274,7 +272,7 @@ The official Unicode block can be discussed as a Unicode-scoped character-encodi
 
 Those are real Unicode-scoped uses. They are not production-basis uses for Sutton SignWriting. Their value is in understanding, auditing, documenting, or warning about the Unicode model.
 
-Noto Sans SignWriting demonstrates that a public font path for the official Unicode approach exists. It does not demonstrate audited production readiness, lossless migration from FSW/SWU, renderer-independent facial authoring, or compatibility across independent implementations.
+Noto Sans SignWriting demonstrates that a public font path for the official Unicode approach exists. [Noto Sans SignWriting repository] It does not demonstrate audited production readiness, lossless migration from FSW/SWU, renderer-independent facial authoring, or compatibility across independent implementations.
 
 Do not treat missing adoption of the official Unicode block as evidence that Sutton SignWriting lacks production use. The production path exists; it is not the official Unicode block.
 
@@ -306,7 +304,7 @@ For production practice to move beyond this boundary, there would need to be a n
 
 Existing Unicode characters are not going away. A future model might work around them, supersede them for production purposes, or define a separate production-preserving path. But the current official facial-diacritic sequence would remain what it is: a Unicode-specific abstraction, not a production-preserving Sutton SignWriting facial-writing model.
 
-Official Unicode stability is Unicode stability. It is not production stability for Sutton SignWriting. A stable Unicode-scoped artifact can still be structurally inadequate as a production text model.
+Official Unicode stability is Unicode stability. [Unicode Character Encoding Stability Policies] It is not production stability for Sutton SignWriting. A stable Unicode-scoped artifact can still be structurally inadequate as a production text model.
 
 ## Common Misreadings
 
@@ -401,7 +399,7 @@ Treat the official Unicode block as a Unicode-scoped artifact, not as the text f
 
 ## Sources And Evidence Anchors
 
-These sources are grouped by evidentiary role. Unicode sources identify the official model and stability rules; proposal and UTC records document the standards discussion; font sources anchor implementation behavior; Sutton SignWriting sources identify the production-preserving model.
+Inline source labels refer to the evidence anchors listed below. These sources are grouped by evidentiary role. Unicode sources identify the official model and stability rules; proposal and UTC records document the standards discussion; font sources anchor implementation behavior; Sutton SignWriting sources identify the production-preserving model.
 
 ### Unicode Model And Stability
 
